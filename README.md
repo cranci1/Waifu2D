@@ -7,7 +7,7 @@ simple swift app that display an anime girl + some texts under it. Thanks chatgp
 (may change during time, facs: is already changed)
 
 ---
-To install the app you can use trollstore and sideloadly ( idk for sideloadly but trollstore yes ), idk why but altstore is broken rn.
+To install the app you can use trollstore, sideloadly, altstore or any other program to install .ipa files
 
 ---
 ## Things to add:
