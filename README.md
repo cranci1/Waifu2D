@@ -4,7 +4,7 @@ simple swift app that display an anime girl + some texts under it. Thanks chatgp
 ## UI:
 <img src="icon-new/ui.png" alt="UI" />
 
-(may change during time)
+(may change during time, facs: is already changed)
 
 ---
 To install the app you can use trollstore and sideloadly ( idk for sideloadly but trollstore yes ), idk why but altstore is broken rn.
@@ -14,8 +14,7 @@ To install the app you can use trollstore and sideloadly ( idk for sideloadly bu
 
 - custom display image/images
 - custom display text
-- a menu to manage some stuffs (kinda done have to make it works)
-- onboarding stuff
+- ~~a menu to manage some stuffs (kinda done have to make it works)~~
 - ~~widget with a display image~~
 
 ---
