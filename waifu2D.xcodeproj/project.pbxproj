@@ -217,9 +217,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				13F89A7C2AC033600013A4EA /* PBXTargetDependency */,
 				13BD53C92AB9D12800AF7808 /* PBXTargetDependency */,
 			);
 			name = waifu2D;
+			packageProductDependencies = (
+			);
 			productName = waifu2D;
 			productReference = 1351D6772AB5FFF30005440D /* waifu2D.app */;
 			productType = "com.apple.product-type.application";
@@ -312,6 +315,8 @@
 				Base,
 			);
 			mainGroup = 1351D66E2AB5FFF30005440D;
+			packageReferences = (
+			);
 			productRefGroup = 1351D6782AB5FFF30005440D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -417,6 +422,10 @@
 			isa = PBXTargetDependency;
 			target = 13BD53BB2AB9D12600AF7808 /* widgetExtension */;
 			targetProxy = 13BD53C82AB9D12800AF7808 /* PBXContainerItemProxy */;
+		};
+		13F89A7C2AC033600013A4EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 13F89A7B2AC033600013A4EA /* OnboardKit */;
 		};
 /* End PBXTargetDependency section */
 
@@ -814,6 +823,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		13F89A762AC033270013A4EA /* XCRemoteSwiftPackageReference "OnboardKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NikolaKirev/OnboardKit";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		13F89A7B2AC033600013A4EA /* OnboardKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 13F89A762AC033270013A4EA /* XCRemoteSwiftPackageReference "OnboardKit" */;
+			productName = OnboardKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1351D66F2AB5FFF30005440D /* Project object */;
 }
