@@ -2,7 +2,7 @@
 simple swift app that display an anime girl + some texts under it. Thanks chatgpt
 
 ## UI:
-<img src="icon-new/ui.png" alt="UI" />
+<img src="icon-new/ui2.png" alt="UI" />
 
 (may change during time, facs: is already changed)
 
