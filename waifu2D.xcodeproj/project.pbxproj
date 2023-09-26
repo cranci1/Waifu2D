@@ -19,6 +19,7 @@
 		1351D6922AB5FFF50005440D /* waifu2DTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351D6912AB5FFF50005440D /* waifu2DTests.swift */; };
 		1351D69C2AB5FFF50005440D /* waifu2DUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351D69B2AB5FFF50005440D /* waifu2DUITests.swift */; };
 		1351D69E2AB5FFF50005440D /* waifu2DUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351D69D2AB5FFF50005440D /* waifu2DUITestsLaunchTests.swift */; };
+		13B3BAE42AC33A92005AA8E6 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B3BAE32AC33A92005AA8E6 /* NotificationManager.swift */; };
 		13BD53BD2AB9D12600AF7808 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BD53A42AB9C83700AF7808 /* WidgetKit.framework */; };
 		13BD53BE2AB9D12600AF7808 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BD53A62AB9C83700AF7808 /* SwiftUI.framework */; };
 		13BD53C12AB9D12600AF7808 /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BD53C02AB9D12600AF7808 /* widget.swift */; };
@@ -81,6 +82,9 @@
 		1351D6972AB5FFF50005440D /* waifu2DUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = waifu2DUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1351D69B2AB5FFF50005440D /* waifu2DUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waifu2DUITests.swift; sourceTree = "<group>"; };
 		1351D69D2AB5FFF50005440D /* waifu2DUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waifu2DUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		13AA74002AC350AA008BAB6A /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		13AA74022AC350AA008BAB6A /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		13B3BAE32AC33A92005AA8E6 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		13BD53A42AB9C83700AF7808 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		13BD53A62AB9C83700AF7808 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		13BD53BC2AB9D12600AF7808 /* widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +164,7 @@
 				1351D6832AB5FFF50005440D /* Assets.xcassets */,
 				1351D6852AB5FFF50005440D /* LaunchScreen.storyboard */,
 				1351D6882AB5FFF50005440D /* Info.plist */,
+				13B3BAE32AC33A92005AA8E6 /* NotificationManager.swift */,
 			);
 			path = waifu2D;
 			sourceTree = "<group>";
@@ -187,6 +192,8 @@
 				13BD53A42AB9C83700AF7808 /* WidgetKit.framework */,
 				13BD53A62AB9C83700AF7808 /* SwiftUI.framework */,
 				133EFA4D2ABB0D56004E32EC /* UniformTypeIdentifiers.framework */,
+				13AA74002AC350AA008BAB6A /* UserNotifications.framework */,
+				13AA74022AC350AA008BAB6A /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -371,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13B3BAE42AC33A92005AA8E6 /* NotificationManager.swift in Sources */,
 				131077CB2ABCA195004AB5EE /* SettingsView.swift in Sources */,
 				13BD53C72AB9D12800AF7808 /* widget.intentdefinition in Sources */,
 				1351D67F2AB5FFF30005440D /* ViewController.swift in Sources */,

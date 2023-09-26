@@ -241,7 +241,7 @@ func updateImageView() {
             }
         }
     }
- }
+}
 
     @IBAction func showColourPicker(_ sender: Any) {
         let picker = UIColorPickerViewController()

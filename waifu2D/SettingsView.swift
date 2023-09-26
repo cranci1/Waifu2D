@@ -64,7 +64,6 @@ struct SettingsView: View {
                     HStack {
                         Text("Github repo")
                     }
-                    .font(.system(size: 15))
                     .onTapGesture {
                         if let url = URL(string: "https://github.com/cranci1/waifu2D/") {
                             UIApplication.shared.open(url)
