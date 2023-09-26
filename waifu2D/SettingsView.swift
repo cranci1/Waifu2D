@@ -6,7 +6,8 @@ struct SettingsView: View {
     @Binding var isHapticEnabled: Bool
     @Binding var isHaptic2Enabled: Bool
     
-    
+    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "N/A"
+    let appBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "N/A"
     
     var body: some View {
         NavigationView {
@@ -51,6 +52,27 @@ struct SettingsView: View {
                         }
                     }
                 }
+                
+                Section(header: Text("About App")) {
+                        HStack {
+                        Text("Version: \(appVersion)")
+                        }
+                        HStack {
+                        Text("Build: \(appBuild)")
+                        }
+                    
+                    HStack {
+                        Text("Github repo")
+                    }
+                    .font(.system(size: 15))
+                    .onTapGesture {
+                        if let url = URL(string: "https://github.com/cranci1/waifu2D/") {
+                            UIApplication.shared.open(url)
+                        }
+                    }
+                    
+                }
+                
             }
             .navigationTitle("Settings")
             
