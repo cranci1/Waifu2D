@@ -35,11 +35,11 @@ class NotificationManager {
                     "No matter where life takes us, my love for you will always burn like an eternal flame.",
         ]
 
-        let notificationInterval: TimeInterval = 1 * 60 * 1
-        var delay: TimeInterval = 10
+        let notificationInterval: TimeInterval = 1 * 60 * 60
+        var delay: TimeInterval = 60
 
         for text in notificationTexts {
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: true)
             content.title = "Sweet Missings 💕"
             content.body = text
 
