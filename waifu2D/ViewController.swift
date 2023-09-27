@@ -266,5 +266,4 @@ extension ViewController: UIColorPickerViewControllerDelegate {
         // Update the background color of the main view
         self.view.backgroundColor = selectedColor
     }
-}
-// #4295BB
+} // #4295BB

@@ -33,9 +33,21 @@ class NotificationManager {
                     "I want to be the one who makes your heart skip a beat, just as you do with mine.",
                     "In this world or any other, I would still find my way to you. That's how much I miss you",
                     "No matter where life takes us, my love for you will always burn like an eternal flame.",
+                    
+                    "Senpai, your absence feels like a storm in my heart. I miss you, and the world turns gray without your laughter. 🌧️💔",
+                    "Your smile is the compass guiding my thoughts. I miss you with every step in this vast world. 🌍💖",
+                    "In the galaxy of my emotions, your absence creates a black hole. I long for the light of your presence. 🌌✨",
+                    "Time slows down when you're not around. My heart races to catch up. I yearn for the rhythm of 'us' again. ⏳❤️",
+                    "Each tick of the clock echoes my heartbeat, a reminder of the moments slipping by without you. ⌛💔",
+                    "The map of my day has a blank spot — the place where you should be. I'm navigating towards the day we reunite. 🗺️🚶‍♂️",
+                    "The space between us is filled with the echoes of my silent longing. I miss you more than words can convey. 🌌💬",
+                    "If my thoughts were stars, they'd form constellations of you. I miss you to the farthest reaches of the universe. ✨🌌",
+                    "My heart whispers your name in the quiet moments. I ache for the symphony of 'you and me' to resume. 🎶❤️",
+                    "Like a sunset without its colors, my day lacks vibrancy without you. 🌅💖",
+                    "I'm a melody without its harmony when you're not here. Let's compose our song together again. 🎵❤️",
         ]
 
-        let notificationInterval: TimeInterval = 1 * 60 * 60
+        let notificationInterval: TimeInterval = 3 * 60 * 60 // 3 hours in seconds
         var delay: TimeInterval = 60
 
         for text in notificationTexts {
