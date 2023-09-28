@@ -48,21 +48,22 @@ class NotificationManager {
         ]
 
         let notificationInterval: TimeInterval = 3 * 60 * 60 // 3 hours in seconds
-        var delay: TimeInterval = 60
+        var delay: TimeInterval = 10800
 
         for text in notificationTexts {
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: true)
-            content.title = "Sweet Missings 💕"
-            content.body = text
+                   let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: true) // set repeats to true
+                   content.title = "Sweet Missings 💕"
+                   content.body = text
 
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-            UNUserNotificationCenter.current().add(request) { (error) in
-                if let error = error {
-                    print("Error scheduling notification: \(error.localizedDescription)")
-                }
-            }
+                   let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                   UNUserNotificationCenter.current().add(request) { (error) in
+                       if let error = error {
+                           print("Error scheduling notification: \(error.localizedDescription)")
+                       }
+                   }
 
-            delay += notificationInterval
+                   delay += notificationInterval
         }
     }
+    
 }

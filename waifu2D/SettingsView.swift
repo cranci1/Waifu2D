@@ -71,8 +71,6 @@ struct SettingsView: View {
                     }
                     
                 }
-                
-            }
             .navigationTitle("Settings")
             
             Button("Toggle Settings") {
@@ -80,7 +78,7 @@ struct SettingsView: View {
             }
         }
     }
-}
+  }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
@@ -90,4 +88,5 @@ struct SettingsView_Previews: PreviewProvider {
         )
             .preferredColorScheme(.dark)
     }
+  }
 }
