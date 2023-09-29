@@ -5,7 +5,6 @@ class ViewController: UIViewController {
     
     @AppStorage("isHapticEnabled") private var isHapticEnabled = false
     @AppStorage("isHaptic2Enabled") private var isHaptic2Enabled = false
-
     
     // Arrays of text captions for each variant
                let RascalCaptions = [
@@ -64,7 +63,11 @@ class ViewController: UIViewController {
             // Create a UILabel for the initial variant and caption
             let captionLabel = UILabel()
             captionLabel.text = randomCaption()
-            captionLabel.textColor = .white
+            
+            captionLabel.textColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
+                return traitCollection.userInterfaceStyle == .light ? .black : .white
+            }
+            
             captionLabel.textAlignment = .center
             captionLabel.numberOfLines = 0
             captionLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -82,7 +85,11 @@ class ViewController: UIViewController {
             let cycleIconConfig = UIImage.SymbolConfiguration(pointSize: 25)
             let cycleIcon = UIImage(systemName: "arrow.right", withConfiguration: cycleIconConfig)
             switchButton.setImage(cycleIcon, for: .normal)
-            switchButton.tintColor = .white
+            
+            switchButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
+                return traitCollection.userInterfaceStyle == .light ? .black : .white
+            }
+            
             switchButton.addTarget(self, action: #selector(switchVariant), for: .touchUpInside)
             switchButton.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(switchButton)
@@ -94,26 +101,56 @@ class ViewController: UIViewController {
                 switchButton.heightAnchor.constraint(equalToConstant: 40)
             ])
             
+            
+            // Create a button to show the color picker
+            let showColorPickerButton = UIButton(type: .system)
+            let colorPickerConfig = UIImage.SymbolConfiguration(pointSize: 20)
+            let colorPickerIcon = UIImage(systemName: "paintpalette", withConfiguration: colorPickerConfig)
+            
+            showColorPickerButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
+                return traitCollection.userInterfaceStyle == .light ? .black : .white
+            }
+            
+            showColorPickerButton.setImage(colorPickerIcon, for: .normal)
+            showColorPickerButton.addTarget(self, action: #selector(showColourPicker), for: .touchUpInside)
+            showColorPickerButton.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(showColorPickerButton)
+
+            // Adjust constraints for top-right positioning
+            showColorPickerButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 56).isActive = true
+            showColorPickerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+
+            
             // Create a button with the right arrow icon for changing text and image
             let arrowButton = UIButton(type: .system)
             let arrowIconConfig = UIImage.SymbolConfiguration(pointSize: 25)
             let arrowIcon = UIImage(systemName: "arrow.2.circlepath", withConfiguration: arrowIconConfig)
             arrowButton.setImage(arrowIcon, for: .normal)
-            arrowButton.tintColor = .white
+
+            // Set the button color based on the system theme
+            arrowButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
+                return traitCollection.userInterfaceStyle == .light ? .black : .white
+            }
+
             arrowButton.addTarget(self, action: #selector(changeTextAndImage), for: .touchUpInside)
             arrowButton.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(arrowButton)
-            
+
             // Create constraints to position the button at the bottom left
             arrowButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
             arrowButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16).isActive = true
+
             
             
             // Create a button to present the settingsView
             let showSettingsButton = UIButton(type: .system)
             let showSettingsConfig = UIImage.SymbolConfiguration(pointSize: 20)
             let showSettingsIcon = UIImage(systemName: "gear", withConfiguration: showSettingsConfig)
-            showSettingsButton.tintColor = .white
+            
+            showSettingsButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
+                return traitCollection.userInterfaceStyle == .light ? .black : .white
+            }
+            
             showSettingsButton.setImage(showSettingsIcon, for: .normal)
             showSettingsButton.addTarget(self, action: #selector(showSettings), for: .touchUpInside)
             showSettingsButton.translatesAutoresizingMaskIntoConstraints = false
@@ -241,29 +278,29 @@ func updateImageView() {
             }
         }
     }
-}
-
-    @IBAction func showColourPicker(_ sender: Any) {
-        let picker = UIColorPickerViewController()
-        picker.delegate = self
-        self.present(picker, animated: true, completion: nil)
-    }
-}
-
-extension ViewController: UIColorPickerViewControllerDelegate {
-    func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
-        self.dismiss(animated: true, completion: nil)
-    }
+ }
     
-    func colorPickerViewControllerDidSelectColor(_ viewController: UIColorPickerViewController) {
-        let selectedColor = viewController.selectedColor
-        
-        // Save the selected color to UserDefaults
-        if let colorData = try? NSKeyedArchiver.archivedData(withRootObject: selectedColor, requiringSecureCoding: false) {
-            UserDefaults.standard.set(colorData, forKey: "selectedColor")
-        }
-        
-        // Update the background color of the main view
-        self.view.backgroundColor = selectedColor
+    @IBAction func showColourPicker(_ sender: Any) {
+          let picker = UIColorPickerViewController()
+          picker.delegate = self
+          self.present(picker, animated: true, completion: nil)
     }
-} // #4295BB
+}
+
+  extension ViewController: UIColorPickerViewControllerDelegate {
+      func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
+          self.dismiss(animated: true, completion: nil)
+      }
+      
+      func colorPickerViewControllerDidSelectColor(_ viewController: UIColorPickerViewController) {
+          let selectedColor = viewController.selectedColor
+          
+          // Save the selected color to UserDefaults
+          if let colorData = try? NSKeyedArchiver.archivedData(withRootObject: selectedColor, requiringSecureCoding: false) {
+              UserDefaults.standard.set(colorData, forKey: "selectedColor")
+          }
+          
+          // Update the background color of the main view
+          self.view.backgroundColor = selectedColor
+      }
+}
