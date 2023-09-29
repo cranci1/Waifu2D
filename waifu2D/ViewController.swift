@@ -6,6 +6,9 @@ class ViewController: UIViewController {
     @AppStorage("isHapticEnabled") private var isHapticEnabled = false
     @AppStorage("isHaptic2Enabled") private var isHaptic2Enabled = false
     @AppStorage("isAnimationEnabled") private var isAnimationEnabled = false
+    @AppStorage("isButtonEnabled") private var isButtonEnabled = true
+    @AppStorage("isGestureEnabled") private var isGestureEnabled = true
+
     
     // Arrays of text captions for each variant
                let RascalCaptions = [
@@ -53,7 +56,14 @@ class ViewController: UIViewController {
     
            override func viewDidLoad() {
               super.viewDidLoad()
-                
+               
+               
+            let tripleTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTripleTap))
+            tripleTapGesture.numberOfTapsRequired = 3
+            view.addGestureRecognizer(tripleTapGesture)
+               
+               
+               
         // Add a UISwipeGestureRecognizer for right swipes
             let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeRight))
             swipeRight.direction = .right
@@ -113,6 +123,75 @@ class ViewController: UIViewController {
                 captionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                 captionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
             ])
+               
+               if isButtonEnabled {
+                       // Add the switchButton
+                       let switchButton = UIButton(type: .system)
+                       let cycleIconConfig = UIImage.SymbolConfiguration(pointSize: 25)
+                       let cycleIcon = UIImage(systemName: "arrow.right", withConfiguration: cycleIconConfig)
+                       switchButton.setImage(cycleIcon, for: .normal)
+                       switchButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
+                           return traitCollection.userInterfaceStyle == .light ? .black : .white
+                       }
+                       switchButton.addTarget(self, action: #selector(switchVariant), for: .touchUpInside)
+                       switchButton.translatesAutoresizingMaskIntoConstraints = false
+                       view.addSubview(switchButton)
+
+                       NSLayoutConstraint.activate([
+                           switchButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+                           switchButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+                           switchButton.widthAnchor.constraint(equalToConstant: 45),
+                           switchButton.heightAnchor.constraint(equalToConstant: 40)
+                       ])
+
+                       // Add the showColorPickerButton
+                       let showColorPickerButton = UIButton(type: .system)
+                       let colorPickerConfig = UIImage.SymbolConfiguration(pointSize: 20)
+                       let colorPickerIcon = UIImage(systemName: "paintpalette", withConfiguration: colorPickerConfig)
+                       showColorPickerButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
+                           return traitCollection.userInterfaceStyle == .light ? .black : .white
+                       }
+                       showColorPickerButton.setImage(colorPickerIcon, for: .normal)
+                       showColorPickerButton.addTarget(self, action: #selector(showColourPicker), for: .touchUpInside)
+                       showColorPickerButton.translatesAutoresizingMaskIntoConstraints = false
+                       view.addSubview(showColorPickerButton)
+
+                       // Adjust constraints for top-right positioning
+                       showColorPickerButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 56).isActive = true
+                       showColorPickerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+
+                       // Add the arrowButton
+                       let arrowButton = UIButton(type: .system)
+                       let arrowIconConfig = UIImage.SymbolConfiguration(pointSize: 25)
+                       let arrowIcon = UIImage(systemName: "arrow.2.circlepath", withConfiguration: arrowIconConfig)
+                       arrowButton.setImage(arrowIcon, for: .normal)
+                       arrowButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
+                           return traitCollection.userInterfaceStyle == .light ? .black : .white
+                       }
+                       arrowButton.addTarget(self, action: #selector(changeTextAndImage), for: .touchUpInside)
+                       arrowButton.translatesAutoresizingMaskIntoConstraints = false
+                       view.addSubview(arrowButton)
+
+                       // Create constraints to position the button at the bottom left
+                       arrowButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+                       arrowButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16).isActive = true
+
+                       // Add the showSettingsButton
+                       let showSettingsButton = UIButton(type: .system)
+                       let showSettingsConfig = UIImage.SymbolConfiguration(pointSize: 20)
+                       let showSettingsIcon = UIImage(systemName: "gear", withConfiguration: showSettingsConfig)
+                       showSettingsButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
+                           return traitCollection.userInterfaceStyle == .light ? .black : .white
+                       }
+                       showSettingsButton.setImage(showSettingsIcon, for: .normal)
+                       showSettingsButton.addTarget(self, action: #selector(showSettings), for: .touchUpInside)
+                       showSettingsButton.translatesAutoresizingMaskIntoConstraints = false
+                       view.addSubview(showSettingsButton)
+
+                       showSettingsButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+                       showSettingsButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+                   }
+               
     // Set the initial image based on the current variant
             updateImageView()
         }
@@ -154,40 +233,56 @@ class ViewController: UIViewController {
 
     
     @objc func handleSwipeRight(gesture: UISwipeGestureRecognizer) {
+    if isGestureEnabled {
         if gesture.direction == .right {
             changeTextAndImage()
         }
     }
+ }
     
     @objc func handleSwipeLeft(gesture: UISwipeGestureRecognizer) {
+    if isGestureEnabled {
         if gesture.direction == .left {
             switchVariant()
         }
     }
+  }
     
     @objc func handleSwipeTop(gesture: UISwipeGestureRecognizer) {
+        if isGestureEnabled {
            if gesture.direction == .up {
                showColourPicker((Any).self)
            }
-       }
+        }
+    }
     
     @objc func handleSwipeDown(gesture: UISwipeGestureRecognizer) {
+        if isGestureEnabled {
             if gesture.direction == .down {
                 showSettings()
             }
         }
-    
+    }
 
+    @objc func handleTripleTap() {
+            showSettings()
+        }
+    
     @objc func showSettings() {
         let settingsView = SettingsView(
+            
             isHapticEnabled: $isHapticEnabled,
             isHaptic2Enabled: $isHaptic2Enabled,
-            isAnimationEnabled: $isAnimationEnabled
+            isAnimationEnabled: $isAnimationEnabled,
+            isGestureEnabled: $isGestureEnabled,
+            isButtonEnabled: $isButtonEnabled
+            
         )
             let settingsViewController = UIHostingController(rootView: settingsView)
             present(settingsViewController, animated: true, completion: nil)
         }
 
+    
     @objc func switchVariant() {
         currentVariantIndex = (currentVariantIndex + 1) % variants.count
         

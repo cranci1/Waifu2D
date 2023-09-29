@@ -6,6 +6,8 @@ struct SettingsView: View {
     @Binding var isHapticEnabled: Bool
     @Binding var isHaptic2Enabled: Bool
     @Binding var isAnimationEnabled: Bool
+    @Binding var isGestureEnabled: Bool
+    @Binding var isButtonEnabled: Bool
     
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "N/A"
     let appBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "N/A"
@@ -18,7 +20,8 @@ struct SettingsView: View {
             .hidden()
             
             Form {
-                Section(header: Text("General"), footer: Text("The haptic feedback is the vibration when switching variant/text")) {
+                Section(header: Text("General"), footer: Text("The haptic feedback is the vibration when switching variant/text. If you enable/disable 'Use Buttons' you need to restart the app to see them.")) {
+                    
                     Toggle(isOn: $isHapticEnabled, label: {
                         Text("Haptic feedback for Variant")
                     })
@@ -28,10 +31,19 @@ struct SettingsView: View {
                     })
                     
                     Toggle(isOn: $isAnimationEnabled, label: {
-                        Text("Animation when changing Variant ")
+                        Text("Animation when changing Variant")
+                    })
+                
+                    Toggle(isOn: $isButtonEnabled, label: {
+                        Text("Use Buttons")
+                    })
+                    
+                    Toggle(isOn: $isGestureEnabled, label: {
+                        Text("Use Gestures")
                     })
                     
                 }
+                
                 
                 
                 Section {
@@ -79,6 +91,7 @@ struct SettingsView: View {
                 }
                 
             }
+            .navigationBarBackButtonHidden(true)
             .navigationTitle("Settings")
             
             Button("Toggle Settings") {
@@ -93,7 +106,9 @@ struct SettingsView_Previews: PreviewProvider {
         SettingsView (
             isHapticEnabled: .constant(false),
             isHaptic2Enabled: .constant(false),
-            isAnimationEnabled: .constant(false)
+            isAnimationEnabled: .constant(false),
+            isGestureEnabled: .constant(true),
+            isButtonEnabled: .constant(true)
         )
             .preferredColorScheme(.dark)
     }
