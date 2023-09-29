@@ -50,8 +50,29 @@ class ViewController: UIViewController {
        override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
            return .portrait
        }
-        override func viewDidLoad() {
-            super.viewDidLoad()
+    
+           override func viewDidLoad() {
+              super.viewDidLoad()
+                
+        // Add a UISwipeGestureRecognizer for right swipes
+            let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeRight))
+            swipeRight.direction = .right
+            view.addGestureRecognizer(swipeRight)
+            
+               
+            let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeLeft))
+            swipeLeft.direction = .left
+            view.addGestureRecognizer(swipeLeft)
+               
+            let swipeTop = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeTop))
+            swipeTop.direction = .up
+            view.addGestureRecognizer(swipeTop)
+               
+               
+            let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeDown))
+            swipeDown.direction = .down
+            view.addGestureRecognizer(swipeDown)
+               
             
             // Load the previously selected color (if any)
             if let savedColorData = UserDefaults.standard.data(forKey: "selectedColor"),
@@ -92,87 +113,7 @@ class ViewController: UIViewController {
                 captionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                 captionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
             ])
-            
-            // Create a button with the icon for switching variants
-            let switchButton = UIButton(type: .system)
-            let cycleIconConfig = UIImage.SymbolConfiguration(pointSize: 25)
-            let cycleIcon = UIImage(systemName: "arrow.right", withConfiguration: cycleIconConfig)
-            switchButton.setImage(cycleIcon, for: .normal)
-            
-            switchButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
-                return traitCollection.userInterfaceStyle == .light ? .black : .white
-            }
-            
-            switchButton.addTarget(self, action: #selector(switchVariant), for: .touchUpInside)
-            switchButton.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(switchButton)
-            
-            NSLayoutConstraint.activate([
-                switchButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-                switchButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
-                switchButton.widthAnchor.constraint(equalToConstant: 45),
-                switchButton.heightAnchor.constraint(equalToConstant: 40)
-            ])
-            
-            
-            // Create a button to show the color picker
-            let showColorPickerButton = UIButton(type: .system)
-            let colorPickerConfig = UIImage.SymbolConfiguration(pointSize: 20)
-            let colorPickerIcon = UIImage(systemName: "paintpalette", withConfiguration: colorPickerConfig)
-            
-            showColorPickerButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
-                return traitCollection.userInterfaceStyle == .light ? .black : .white
-            }
-            
-            showColorPickerButton.setImage(colorPickerIcon, for: .normal)
-            showColorPickerButton.addTarget(self, action: #selector(showColourPicker), for: .touchUpInside)
-            showColorPickerButton.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(showColorPickerButton)
-
-            // Adjust constraints for top-right positioning
-            showColorPickerButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 56).isActive = true
-            showColorPickerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
-
-            
-            // Create a button with the right arrow icon for changing text and image
-            let arrowButton = UIButton(type: .system)
-            let arrowIconConfig = UIImage.SymbolConfiguration(pointSize: 25)
-            let arrowIcon = UIImage(systemName: "arrow.2.circlepath", withConfiguration: arrowIconConfig)
-            arrowButton.setImage(arrowIcon, for: .normal)
-
-            // Set the button color based on the system theme
-            arrowButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
-                return traitCollection.userInterfaceStyle == .light ? .black : .white
-            }
-
-            arrowButton.addTarget(self, action: #selector(changeTextAndImage), for: .touchUpInside)
-            arrowButton.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(arrowButton)
-
-            // Create constraints to position the button at the bottom left
-            arrowButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-            arrowButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16).isActive = true
-
-            
-            
-            // Create a button to present the settingsView
-            let showSettingsButton = UIButton(type: .system)
-            let showSettingsConfig = UIImage.SymbolConfiguration(pointSize: 20)
-            let showSettingsIcon = UIImage(systemName: "gear", withConfiguration: showSettingsConfig)
-            
-            showSettingsButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
-                return traitCollection.userInterfaceStyle == .light ? .black : .white
-            }
-            
-            showSettingsButton.setImage(showSettingsIcon, for: .normal)
-            showSettingsButton.addTarget(self, action: #selector(showSettings), for: .touchUpInside)
-            showSettingsButton.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(showSettingsButton)
-
-            showSettingsButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-            showSettingsButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-            
-            // Set the initial image based on the current variant
+    // Set the initial image based on the current variant
             updateImageView()
         }
     
@@ -211,6 +152,30 @@ class ViewController: UIViewController {
     }
 
 
+    
+    @objc func handleSwipeRight(gesture: UISwipeGestureRecognizer) {
+        if gesture.direction == .right {
+            changeTextAndImage()
+        }
+    }
+    
+    @objc func handleSwipeLeft(gesture: UISwipeGestureRecognizer) {
+        if gesture.direction == .left {
+            switchVariant()
+        }
+    }
+    
+    @objc func handleSwipeTop(gesture: UISwipeGestureRecognizer) {
+           if gesture.direction == .up {
+               showColourPicker((Any).self)
+           }
+       }
+    
+    @objc func handleSwipeDown(gesture: UISwipeGestureRecognizer) {
+            if gesture.direction == .down {
+                showSettings()
+            }
+        }
     
 
     @objc func showSettings() {
