@@ -5,6 +5,7 @@ struct SettingsView: View {
     
     @Binding var isHapticEnabled: Bool
     @Binding var isHaptic2Enabled: Bool
+    @Binding var isAnimationEnabled: Bool
     
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "N/A"
     let appBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "N/A"
@@ -19,11 +20,15 @@ struct SettingsView: View {
             Form {
                 Section(header: Text("General"), footer: Text("The haptic feedback is the vibration when switching variant/text")) {
                     Toggle(isOn: $isHapticEnabled, label: {
-                        Text("Haptic feedback for variant")
+                        Text("Haptic feedback for Variant")
                     })
                     
                     Toggle(isOn: $isHaptic2Enabled, label: {
-                        Text("Haptic feedback for text")
+                        Text("Haptic feedback for Text")
+                    })
+                    
+                    Toggle(isOn: $isAnimationEnabled, label: {
+                        Text("Animation when changing Variant ")
                     })
                     
                 }
@@ -87,7 +92,8 @@ struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView (
             isHapticEnabled: .constant(false),
-            isHaptic2Enabled: .constant(false)
+            isHaptic2Enabled: .constant(false),
+            isAnimationEnabled: .constant(false)
         )
             .preferredColorScheme(.dark)
     }

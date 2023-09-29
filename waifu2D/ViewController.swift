@@ -5,6 +5,7 @@ class ViewController: UIViewController {
     
     @AppStorage("isHapticEnabled") private var isHapticEnabled = false
     @AppStorage("isHaptic2Enabled") private var isHaptic2Enabled = false
+    @AppStorage("isAnimationEnabled") private var isAnimationEnabled = false
     
     // Arrays of text captions for each variant
                let RascalCaptions = [
@@ -37,6 +38,18 @@ class ViewController: UIViewController {
         // Create a UISelectionFeedbackGenerator for haptic feedback
         let feedbackGenerator = UISelectionFeedbackGenerator()
     
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+           return .portrait
+       }
+
+       override var shouldAutorotate: Bool {
+           return true
+       }
+
+       override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+           return .portrait
+       }
         override func viewDidLoad() {
             super.viewDidLoad()
             
@@ -203,40 +216,57 @@ class ViewController: UIViewController {
     @objc func showSettings() {
         let settingsView = SettingsView(
             isHapticEnabled: $isHapticEnabled,
-            isHaptic2Enabled: $isHaptic2Enabled
+            isHaptic2Enabled: $isHaptic2Enabled,
+            isAnimationEnabled: $isAnimationEnabled
         )
             let settingsViewController = UIHostingController(rootView: settingsView)
             present(settingsViewController, animated: true, completion: nil)
         }
 
-
     @objc func switchVariant() {
-                    currentVariantIndex = (currentVariantIndex + 1) % variants.count
-                    updateImageView()
-                    
-                    let captionLabel = view.subviews.compactMap { $0 as? UILabel }.first
-                    captionLabel?.text = randomCaption()
-                    
-        if isHapticEnabled {
-                    feedbackGenerator.selectionChanged()
-                }
-            }
-    
+        currentVariantIndex = (currentVariantIndex + 1) % variants.count
         
-        @objc func changeTextAndImage() {
+        if isAnimationEnabled {
+            let randomDirectionOptions: [UIView.AnimationOptions] = [.transitionFlipFromTop, .transitionFlipFromBottom, .transitionFlipFromLeft, .transitionFlipFromRight]
+            let randomIndex = Int(arc4random_uniform(UInt32(randomDirectionOptions.count)))
+            let randomDirection = randomDirectionOptions[randomIndex]
+            
+            UIView.transition(with: view, duration: 0.5, options: randomDirection, animations: {
+                self.updateImageView()
+                
+                let captionLabel = self.view.subviews.compactMap { $0 as? UILabel }.first
+                captionLabel?.text = self.randomCaption()
+            }, completion: nil)
+            
+            if isHapticEnabled {
+                feedbackGenerator.selectionChanged()
+            }
+        } else {
+            // Perform non-animated logic when animation is disabled
+            updateImageView()
+            
             let captionLabel = view.subviews.compactMap { $0 as? UILabel }.first
             captionLabel?.text = randomCaption()
             
-            // 1 in 2 chance to change the image
-            if Int.random(in: 1...2) == 1 {
-                updateImageView()
+            if isHapticEnabled {
+                feedbackGenerator.selectionChanged()
             }
-            
-            if isHaptic2Enabled {
-                        feedbackGenerator.selectionChanged()
-                    }
         }
+    }
 
+    @objc func changeTextAndImage() {
+        let captionLabel = view.subviews.compactMap { $0 as? UILabel }.first
+        captionLabel?.text = randomCaption()
+        
+        // 1 in 2 chance to change the image
+        if Int.random(in: 1...2) == 1 {
+            updateImageView()
+        }
+        
+        if isHaptic2Enabled {
+            feedbackGenerator.selectionChanged()
+        }
+    }
 
 // Function to update the image view based on the current variant
 func updateImageView() {
