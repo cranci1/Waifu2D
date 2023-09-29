@@ -160,11 +160,11 @@
 				1351D67C2AB5FFF30005440D /* SceneDelegate.swift */,
 				13CC65242ABC874000C0D90A /* SettingsView.swift */,
 				1351D67E2AB5FFF30005440D /* ViewController.swift */,
-				1351D6802AB5FFF30005440D /* Main.storyboard */,
+				13B3BAE32AC33A92005AA8E6 /* NotificationManager.swift */,
 				1351D6832AB5FFF50005440D /* Assets.xcassets */,
+				1351D6802AB5FFF30005440D /* Main.storyboard */,
 				1351D6852AB5FFF50005440D /* LaunchScreen.storyboard */,
 				1351D6882AB5FFF50005440D /* Info.plist */,
-				13B3BAE32AC33A92005AA8E6 /* NotificationManager.swift */,
 			);
 			path = waifu2D;
 			sourceTree = "<group>";

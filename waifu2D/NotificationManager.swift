@@ -47,11 +47,11 @@ class NotificationManager {
                     "I'm a melody without its harmony when you're not here. Let's compose our song together again. 🎵❤️",
         ]
 
-        let notificationInterval: TimeInterval = 3 * 60 * 60 // 3 hours in seconds
+        let notificationInterval: TimeInterval = 3 * 60 * 60
         var delay: TimeInterval = 10800
 
         for text in notificationTexts {
-                   let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: true) // set repeats to true
+                   let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: false)
                    content.title = "Sweet Missings 💕"
                    content.body = text
 

@@ -163,14 +163,14 @@ class ViewController: UIViewController {
 
     
 
-@objc func showSettings() {
-    let settingsView = SettingsView(
-        isHapticEnabled: $isHapticEnabled,
-        isHaptic2Enabled: $isHaptic2Enabled
-    )
-        let settingsViewController = UIHostingController(rootView: settingsView)
-        present(settingsViewController, animated: true, completion: nil)
-    }
+    @objc func showSettings() {
+        let settingsView = SettingsView(
+            isHapticEnabled: $isHapticEnabled,
+            isHaptic2Enabled: $isHaptic2Enabled
+        )
+            let settingsViewController = UIHostingController(rootView: settingsView)
+            present(settingsViewController, animated: true, completion: nil)
+        }
 
 
     @objc func switchVariant() {

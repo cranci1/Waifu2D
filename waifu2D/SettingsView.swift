@@ -64,6 +64,7 @@ struct SettingsView: View {
                     HStack {
                         Text("Github repo")
                     }
+                    .font(.system(size: 15))
                     .onTapGesture {
                         if let url = URL(string: "https://github.com/cranci1/waifu2D/") {
                             UIApplication.shared.open(url)
@@ -71,6 +72,8 @@ struct SettingsView: View {
                     }
                     
                 }
+                
+            }
             .navigationTitle("Settings")
             
             Button("Toggle Settings") {
@@ -78,7 +81,7 @@ struct SettingsView: View {
             }
         }
     }
-  }
+}
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
@@ -88,5 +91,4 @@ struct SettingsView_Previews: PreviewProvider {
         )
             .preferredColorScheme(.dark)
     }
-  }
 }

@@ -32,7 +32,7 @@ struct CustomWidget: Widget {
         }
         .configurationDisplayName("myWaifu2D Widget")
         .description("myWaifu2D widget $$$$$$")
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge])
     }
 }
 
@@ -56,6 +56,8 @@ struct Provider: TimelineProvider {
             imageName = "medium"
         case .systemLarge:
             imageName = "bunny"
+        case .systemExtraLarge:
+            imageName = "medium"
         @unknown default:
             imageName = "bunny"
         }
