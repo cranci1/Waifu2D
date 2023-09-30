@@ -9,6 +9,8 @@ Remember that the UI may change during time ( already changed [ too lazy to chan
 ---
 ## USAGE:
 
+#### IMPORTANT: IF YOU DISABLE BOTH "USE BUTTONS" AND "USE GESTURES" YOU DONT NEED TO RE-INSTALL THE APP. JUST TOUCH QUICKLY 3 TIMES ON THE SCREEN AND THE SETTINGS PAGE WILL POP UP
+
 GESTURES:
 
 - swipe Left = Variant change (for left i mean that you need to start from right and go left)
