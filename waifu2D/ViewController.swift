@@ -29,9 +29,30 @@ class ViewController: UIViewController {
                    "I live my life following these words: 'Thank you', 'You did your best', and 'I love you'.",
                    "I lied, I like you very much",
                    "I think you split my ass in two!” “What? That sounds ba— Wait a second, it already was!",
+                   "That’s probably sugar inside. It’s white anyway.",
+                   "It's okay not to be okay as long as you are willing to be honest about it.",
+                   "People don't change that easily, but that doesn't mean change is impossible.",
+                   "Reality is just a series of events and players deciding how they play their parts.",
+                   "To know yourself is to know that you can't know yourself by yourself.",
+                   "You only get one life. That's why, when you make a mistake, you should correct it.",
+                   "People who have friends, people who aren't alone, are strong.",
+                   "Even if we know each other’s feelings, it’s difficult to accept it. But it’s just as tough for the person telling us their feelings.",
+                   "The harder you work for something, the greater you'll feel when you achieve it.",
+                   "There are times when the world around you grows dark, and it's impossible to see any light. But it's during these times that you mustn't give in to despair. Fight through it, and you'll emerge stronger.",
+                   "Sometimes it's the simple things that make life the most complicated.",
+                   "As long as you're alive, that means you can keep fighting. There's always a possibility that everything will get better.",
+                   "You shouldn't run away. You should confront it and grasp the situation. Then, you'll see hope.",
+                   "The present is something you're supposed to protect and cherish. If you keep mulling over what's already happened, you'll lose sight of what's in front of you.",
+                   "Sometimes, the things you're afraid of, the things you want to avoid, are the very things that make you stronger when you face them.",
+                   "The moment you notice you've done something nice for someone, you lose the right to be arrogant about it.",
+                   "People shouldn't be mean. We should live so that no one will want to be mean to us.",
+                   "Just because you know someone well doesn't mean you know everything about them.",
+                   "Love is not about how many days, months, or years you have been together. Love is about how much you love each other every single day.",
+                   "It's not about being together physically; it's about feeling you here with me even when we're apart.",
+                   "The best relationships usually begin unexpectedly.",
+                   "Love is something that exists between a man and a woman, no matter how far they are from each other.",
+                   "Sometimes, just spending time with the person you love can be the most romantic thing in the world."
                ]
-
-               
     
     // An array of possible variants
         let variants = ["mai", "kaede", "koga", "futaba", "nodoka", "shoko"]
@@ -287,11 +308,16 @@ class ViewController: UIViewController {
         currentVariantIndex = (currentVariantIndex + 1) % variants.count
         
         if isAnimationEnabled {
-            let randomDirectionOptions: [UIView.AnimationOptions] = [.transitionFlipFromTop, .transitionFlipFromBottom, .transitionFlipFromLeft, .transitionFlipFromRight]
-            let randomIndex = Int(arc4random_uniform(UInt32(randomDirectionOptions.count)))
-            let randomDirection = randomDirectionOptions[randomIndex]
+            let randomAnimationOptions: [UIView.AnimationOptions] = [
+                .transitionFlipFromLeft, .transitionFlipFromRight,
+                .transitionFlipFromTop, .transitionFlipFromBottom,
+                .transitionCrossDissolve, .transitionCurlUp, .transitionCurlDown,
+            ]
             
-            UIView.transition(with: view, duration: 0.5, options: randomDirection, animations: {
+            let randomIndex = Int(arc4random_uniform(UInt32(randomAnimationOptions.count)))
+            let randomAnimation = randomAnimationOptions[randomIndex]
+            
+            UIView.transition(with: view, duration: 0.5, options: randomAnimation, animations: {
                 self.updateImageView()
                 
                 let captionLabel = self.view.subviews.compactMap { $0 as? UILabel }.first
@@ -313,6 +339,7 @@ class ViewController: UIViewController {
             }
         }
     }
+    
 
     @objc func changeTextAndImage() {
         let captionLabel = view.subviews.compactMap { $0 as? UILabel }.first
@@ -336,7 +363,7 @@ func updateImageView() {
     
     switch currentVariant {
     case "mai":
-        imageNames = ["mai", "mai2"]
+        imageNames = ["mai", "mai2", "mai3"]
         
     case "kaede":
         imageNames = ["kaede", "kaede2"]
@@ -345,10 +372,10 @@ func updateImageView() {
         imageNames = ["koga", "koga2"]
         
     case "futaba":
-        imageNames = ["futaba"]
+        imageNames = ["futaba", "futaba2"]
         
     case "nodoka":
-        imageNames = ["nodoka"]
+        imageNames = ["nodoka", "nodoka2"]
         
     case "shoko":
         imageNames = ["shoko", "shoko2"]
