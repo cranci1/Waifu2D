@@ -34,12 +34,12 @@ class NotificationManager {
             let notificationTexts = [
                 
             "Senpai, my heart aches when you're not here. I miss you so much, it feels like the world loses its colors without you by my side. 💕🌸",
-            "When I close my eyes, all I can see is your smile. I miss you every second you're not here. 2",
+            "When I close my eyes, all I can see is your smile. I miss you every second you're not here.",
             "Even the stars in the night sky can't outshine the brightness of your presence. I long for you.",
             "My heart beats faster whenever you're near, but it aches when you're away. I wish you were here with me right now.",
             "Every day without you feels like an eternity. I'm counting down the moments until I can see you again.",
-                                    "Distance can't diminish the love I feel for you. It only makes my heart grow fonder.",
-                                    "I want to be the one who makes your heart skip a beat, just as you do with mine.",
+            "Distance can't diminish the love I feel for you. It only makes my heart grow fonder.",
+            "I want to be the one who makes your heart skip a beat, just as you do with mine.",
                                     "In this world or any other, I would still find my way to you. That's how much I miss you",
                                     "No matter where life takes us, my love for you will always burn like an eternal flame.",
                                     "Senpai, your absence feels like a storm in my heart. I miss you, and the world turns gray without your laughter. 🌧️💔",
