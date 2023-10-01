@@ -59,7 +59,7 @@ struct SettingsView: View {
                     }
                     
                     HStack {
-                        Text("📧 Contact via Email ")
+                        Text("📧 Contact me via Email ")
                     }
                     .foregroundColor(.gray)
                     .font(.system(size: 16, weight: .semibold))
@@ -70,7 +70,7 @@ struct SettingsView: View {
                     }
                 }
                 
-                Section(header: Text("About App")) {
+                Section(header: Text("App Info")) {
                         HStack {
                         Text("Version: \(appVersion)")
                         }
@@ -81,7 +81,7 @@ struct SettingsView: View {
                     HStack {
                         Text("Github repo")
                     }
-                    .font(.system(size: 15))
+                    .font(.system(size: 16))
                     .onTapGesture {
                         if let url = URL(string: "https://github.com/cranci1/waifu2D/") {
                             UIApplication.shared.open(url)
