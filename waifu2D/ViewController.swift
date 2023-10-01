@@ -78,7 +78,6 @@ class ViewController: UIViewController {
            override func viewDidLoad() {
               super.viewDidLoad()
                
-               
             let tripleTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTripleTap))
             tripleTapGesture.numberOfTapsRequired = 3
             view.addGestureRecognizer(tripleTapGesture)
@@ -303,43 +302,44 @@ class ViewController: UIViewController {
             present(settingsViewController, animated: true, completion: nil)
         }
 
-    
+
     @objc func switchVariant() {
-        currentVariantIndex = (currentVariantIndex + 1) % variants.count
-        
-        if isAnimationEnabled {
-            let randomAnimationOptions: [UIView.AnimationOptions] = [
-                .transitionFlipFromLeft, .transitionFlipFromRight,
-                .transitionFlipFromTop, .transitionFlipFromBottom,
-                .transitionCrossDissolve, .transitionCurlUp, .transitionCurlDown,
-            ]
-            
-            let randomIndex = Int(arc4random_uniform(UInt32(randomAnimationOptions.count)))
-            let randomAnimation = randomAnimationOptions[randomIndex]
-            
-            UIView.transition(with: view, duration: 0.5, options: randomAnimation, animations: {
-                self.updateImageView()
-                
-                let captionLabel = self.view.subviews.compactMap { $0 as? UILabel }.first
-                captionLabel?.text = self.randomCaption()
-            }, completion: nil)
-            
-            if isHapticEnabled {
-                feedbackGenerator.selectionChanged()
-            }
-        } else {
-            // Perform non-animated logic when animation is disabled
-            updateImageView()
-            
-            let captionLabel = view.subviews.compactMap { $0 as? UILabel }.first
-            captionLabel?.text = randomCaption()
-            
-            if isHapticEnabled {
-                feedbackGenerator.selectionChanged()
-            }
-        }
-    }
-    
+           currentVariantIndex = (currentVariantIndex + 1) % variants.count
+           
+           if isAnimationEnabled {
+               let randomAnimationOptions: [UIView.AnimationOptions] = [
+                   .transitionFlipFromLeft, .transitionFlipFromRight,
+                   .transitionFlipFromTop, .transitionFlipFromBottom,
+                   .transitionCrossDissolve, .transitionCurlUp, .transitionCurlDown,
+               ]
+               
+               let randomIndex = Int(arc4random_uniform(UInt32(randomAnimationOptions.count)))
+               let randomAnimation = randomAnimationOptions[randomIndex]
+               
+               UIView.transition(with: view, duration: 0.5, options: randomAnimation, animations: {
+                   self.updateImageView()
+                   
+                   let captionLabel = self.view.subviews.compactMap { $0 as? UILabel }.first
+                   captionLabel?.text = self.randomCaption()
+               }, completion: nil)
+               
+               if isHapticEnabled {
+                   feedbackGenerator.selectionChanged()
+               }
+           } else {
+               // Perform non-animated logic when animation is disabled
+               updateImageView()
+               
+               let captionLabel = view.subviews.compactMap { $0 as? UILabel }.first
+               captionLabel?.text = randomCaption()
+               
+               if isHapticEnabled {
+                   feedbackGenerator.selectionChanged()
+               }
+           }
+       }
+
+
 
     @objc func changeTextAndImage() {
         let captionLabel = view.subviews.compactMap { $0 as? UILabel }.first

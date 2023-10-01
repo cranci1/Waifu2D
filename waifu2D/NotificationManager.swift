@@ -17,7 +17,7 @@ class NotificationManager {
                 self.scheduleRecurringNotifications()
                 
                 // Schedule recurring timer for future notifications
-                self.notificationTimer = Timer.scheduledTimer(withTimeInterval: 60, repeats: false) { _ in
+                self.notificationTimer = Timer.scheduledTimer(withTimeInterval: 10800, repeats: true) { _ in
                     self.scheduleRecurringNotifications()
                 }
             } else {
@@ -54,31 +54,32 @@ class NotificationManager {
             "Like a sunset without its colors, my day lacks vibrancy without you. 🌅💖",
             "I'm a melody without its harmony when you're not here. Let's compose our song together again. 🎵❤️",
             
+            
             ]
             return notificationTexts.randomElement() ?? "I miss you sempai"
         }
 
-        let notificationInterval: TimeInterval = 60
+        let notificationInterval: TimeInterval = 10800 // 3 hours
         var delay: TimeInterval = 10800
 
-        for _ in 1...10 {
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: false)
-            content.title = "Sweet Missings 💕"
-            content.body = getRandomText()
+                for _ in 1...10 {
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: false)
+                    content.title = "Sweet Missings 💕"
+                    content.body = getRandomText()
 
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-            UNUserNotificationCenter.current().add(request) { (error) in
-                if let error = error {
-                    print("Error scheduling notification: \(error.localizedDescription)")
+                    let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                    UNUserNotificationCenter.current().add(request) { (error) in
+                        if let error = error {
+                            print("Error scheduling notification: \(error.localizedDescription)")
+                        }
+                    }
+
+                    delay += notificationInterval
                 }
             }
 
-            delay += notificationInterval
+            deinit {
+                // Invalidate the timer when the manager is deallocated
+                notificationTimer?.invalidate()
+            }
         }
-    }
-
-    deinit {
-        // Invalidate the timer when the manager is deallocated
-        notificationTimer?.invalidate()
-    }
-}
