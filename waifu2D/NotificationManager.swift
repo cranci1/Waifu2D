@@ -17,7 +17,7 @@ class NotificationManager {
                 self.scheduleRecurringNotifications()
                 
                 // Schedule recurring timer for future notifications
-                self.notificationTimer = Timer.scheduledTimer(withTimeInterval: 3 * 60 * 60, repeats: true) { _ in
+                self.notificationTimer = Timer.scheduledTimer(withTimeInterval: 60, repeats: false) { _ in
                     self.scheduleRecurringNotifications()
                 }
             } else {
@@ -53,6 +53,7 @@ class NotificationManager {
             "My heart whispers your name in the quiet moments. I ache for the symphony of 'you and me' to resume. 🎶❤️",
             "Like a sunset without its colors, my day lacks vibrancy without you. 🌅💖",
             "I'm a melody without its harmony when you're not here. Let's compose our song together again. 🎵❤️",
+            
             ]
             return notificationTexts.randomElement() ?? "I miss you sempai"
         }
