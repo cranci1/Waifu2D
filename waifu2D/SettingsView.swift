@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @State private var isSettingsVisible = false
+    @State private var isTutorialVisible = false
     
     @Binding var isHapticEnabled: Bool
     @Binding var isHaptic2Enabled: Bool
@@ -45,6 +46,14 @@ struct SettingsView: View {
                 }
                 
                 
+                Section(header: Text("Tutorial"), footer: Text("To lazy to make it like onBoarding Sorry.")) {
+                    Button("Show Tutorial") {
+                        isTutorialVisible.toggle()
+                    }
+                    .sheet(isPresented: $isTutorialVisible) {
+                        TutorialView(isPresented: $isTutorialVisible)
+                    }
+                }
                 
                 Section {
                     HStack {
@@ -98,6 +107,7 @@ struct SettingsView: View {
                 isSettingsVisible.toggle()
             }
         }
+        
     }
 }
 

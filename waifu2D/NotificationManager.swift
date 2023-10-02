@@ -17,7 +17,7 @@ class NotificationManager {
                 self.scheduleRecurringNotifications()
                 
                 // Schedule recurring timer for future notifications
-                self.notificationTimer = Timer.scheduledTimer(withTimeInterval: 10800, repeats: true) { _ in
+                self.notificationTimer = Timer.scheduledTimer(withTimeInterval: 18000, repeats: true) { _ in
                     self.scheduleRecurringNotifications()
                 }
             } else {
@@ -59,8 +59,8 @@ class NotificationManager {
             return notificationTexts.randomElement() ?? "I miss you sempai"
         }
 
-        let notificationInterval: TimeInterval = 10800 // 3 hours
-        var delay: TimeInterval = 10800
+        let notificationInterval: TimeInterval = 18000 // 3 hours
+        var delay: TimeInterval = 18000
 
                 for _ in 1...10 {
                     let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: false)

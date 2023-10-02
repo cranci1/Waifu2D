@@ -15,10 +15,10 @@
 		1351D67F2AB5FFF30005440D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351D67E2AB5FFF30005440D /* ViewController.swift */; };
 		1351D6822AB5FFF30005440D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1351D6802AB5FFF30005440D /* Main.storyboard */; };
 		1351D6842AB5FFF50005440D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1351D6832AB5FFF50005440D /* Assets.xcassets */; };
-		1351D6872AB5FFF50005440D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1351D6852AB5FFF50005440D /* LaunchScreen.storyboard */; };
 		1351D6922AB5FFF50005440D /* waifu2DTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351D6912AB5FFF50005440D /* waifu2DTests.swift */; };
 		1351D69C2AB5FFF50005440D /* waifu2DUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351D69B2AB5FFF50005440D /* waifu2DUITests.swift */; };
 		1351D69E2AB5FFF50005440D /* waifu2DUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351D69D2AB5FFF50005440D /* waifu2DUITestsLaunchTests.swift */; };
+		135770232ACB07CE00615C66 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135770222ACB07CE00615C66 /* TutorialView.swift */; };
 		13B3BAE42AC33A92005AA8E6 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B3BAE32AC33A92005AA8E6 /* NotificationManager.swift */; };
 		13BD53BD2AB9D12600AF7808 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BD53A42AB9C83700AF7808 /* WidgetKit.framework */; };
 		13BD53BE2AB9D12600AF7808 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BD53A62AB9C83700AF7808 /* SwiftUI.framework */; };
@@ -75,13 +75,13 @@
 		1351D67E2AB5FFF30005440D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1351D6812AB5FFF30005440D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1351D6832AB5FFF50005440D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1351D6862AB5FFF50005440D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1351D6882AB5FFF50005440D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1351D68D2AB5FFF50005440D /* waifu2DTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = waifu2DTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1351D6912AB5FFF50005440D /* waifu2DTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waifu2DTests.swift; sourceTree = "<group>"; };
 		1351D6972AB5FFF50005440D /* waifu2DUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = waifu2DUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1351D69B2AB5FFF50005440D /* waifu2DUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waifu2DUITests.swift; sourceTree = "<group>"; };
 		1351D69D2AB5FFF50005440D /* waifu2DUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waifu2DUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		135770222ACB07CE00615C66 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		13AA74002AC350AA008BAB6A /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		13AA74022AC350AA008BAB6A /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		13B3BAE32AC33A92005AA8E6 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
@@ -161,9 +161,9 @@
 				13CC65242ABC874000C0D90A /* SettingsView.swift */,
 				1351D67E2AB5FFF30005440D /* ViewController.swift */,
 				13B3BAE32AC33A92005AA8E6 /* NotificationManager.swift */,
+				135770222ACB07CE00615C66 /* TutorialView.swift */,
 				1351D6832AB5FFF50005440D /* Assets.xcassets */,
 				1351D6802AB5FFF30005440D /* Main.storyboard */,
-				1351D6852AB5FFF50005440D /* LaunchScreen.storyboard */,
 				1351D6882AB5FFF50005440D /* Info.plist */,
 			);
 			path = waifu2D;
@@ -341,7 +341,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1351D6872AB5FFF50005440D /* LaunchScreen.storyboard in Resources */,
 				1351D6842AB5FFF50005440D /* Assets.xcassets in Resources */,
 				1351D6822AB5FFF30005440D /* Main.storyboard in Resources */,
 			);
@@ -378,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				135770232ACB07CE00615C66 /* TutorialView.swift in Sources */,
 				13B3BAE42AC33A92005AA8E6 /* NotificationManager.swift in Sources */,
 				131077CB2ABCA195004AB5EE /* SettingsView.swift in Sources */,
 				13BD53C72AB9D12800AF7808 /* widget.intentdefinition in Sources */,
@@ -444,14 +444,6 @@
 				1351D6812AB5FFF30005440D /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		1351D6852AB5FFF50005440D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1351D6862AB5FFF50005440D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -582,13 +574,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MHW52KB748;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = waifu2D/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = myWaifu2D;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
@@ -600,7 +592,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.6.0;
+				MARKETING_VERSION = 0.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cranci.waifu2D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -619,13 +611,13 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MHW52KB748;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = waifu2D/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = myWaifu2D;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
@@ -637,7 +629,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.6.0;
+				MARKETING_VERSION = 0.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cranci.waifu2D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
