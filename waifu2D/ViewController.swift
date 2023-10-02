@@ -9,8 +9,7 @@ class ViewController: UIViewController {
     @AppStorage("isButtonEnabled") private var isButtonEnabled = true
     @AppStorage("isGestureEnabled") private var isGestureEnabled = true
 
-    
-    // Arrays of text captions for each variant
+
                let RascalCaptions = [
                    "What I think, Sakuta-kun, is that life is here for us to become kinder. I live life every day hoping I was a slightly kinder person than I was the day before.",
                    "I don’t mind if I only had one person. Even if the whole world hated me, I could keep living if that person needed me.",
@@ -54,12 +53,10 @@ class ViewController: UIViewController {
                    "Sometimes, just spending time with the person you love can be the most romantic thing in the world."
                ]
     
-    // An array of possible variants
         let variants = ["mai", "kaede", "koga", "futaba", "nodoka", "shoko"]
 
         var currentVariantIndex = 0
         
-        // Create a UISelectionFeedbackGenerator for haptic feedback
         let feedbackGenerator = UISelectionFeedbackGenerator()
     
     

@@ -27,6 +27,10 @@
 		13BD53C62AB9D12800AF7808 /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 13BD53C22AB9D12600AF7808 /* widget.intentdefinition */; };
 		13BD53C72AB9D12800AF7808 /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 13BD53C22AB9D12600AF7808 /* widget.intentdefinition */; };
 		13BD53CA2AB9D12800AF7808 /* widgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 13BD53BC2AB9D12600AF7808 /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		13E9D9072ACB25D8002E2F6D /* moan2.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 13E9D9032ACB25D8002E2F6D /* moan2.ogg */; };
+		13E9D9082ACB25D8002E2F6D /* moan3.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 13E9D9042ACB25D8002E2F6D /* moan3.ogg */; };
+		13E9D9092ACB25D8002E2F6D /* moan4.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 13E9D9052ACB25D8002E2F6D /* moan4.ogg */; };
+		13E9D90A2ACB25D8002E2F6D /* moan1.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 13E9D9062ACB25D8002E2F6D /* moan1.ogg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +97,10 @@
 		13BD53C32AB9D12800AF7808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13BD53C52AB9D12800AF7808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13CC65242ABC874000C0D90A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		13E9D9032ACB25D8002E2F6D /* moan2.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = moan2.ogg; sourceTree = "<group>"; };
+		13E9D9042ACB25D8002E2F6D /* moan3.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = moan3.ogg; sourceTree = "<group>"; };
+		13E9D9052ACB25D8002E2F6D /* moan4.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = moan4.ogg; sourceTree = "<group>"; };
+		13E9D9062ACB25D8002E2F6D /* moan1.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = moan1.ogg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +164,7 @@
 		1351D6792AB5FFF30005440D /* waifu2D */ = {
 			isa = PBXGroup;
 			children = (
+				13E9D9022ACB25BF002E2F6D /* Sounds */,
 				1351D67A2AB5FFF30005440D /* AppDelegate.swift */,
 				1351D67C2AB5FFF30005440D /* SceneDelegate.swift */,
 				13CC65242ABC874000C0D90A /* SettingsView.swift */,
@@ -207,6 +216,17 @@
 				13BD53C52AB9D12800AF7808 /* Info.plist */,
 			);
 			path = widget;
+			sourceTree = "<group>";
+		};
+		13E9D9022ACB25BF002E2F6D /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				13E9D9062ACB25D8002E2F6D /* moan1.ogg */,
+				13E9D9032ACB25D8002E2F6D /* moan2.ogg */,
+				13E9D9042ACB25D8002E2F6D /* moan3.ogg */,
+				13E9D9052ACB25D8002E2F6D /* moan4.ogg */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,8 +361,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13E9D9092ACB25D8002E2F6D /* moan4.ogg in Resources */,
 				1351D6842AB5FFF50005440D /* Assets.xcassets in Resources */,
+				13E9D90A2ACB25D8002E2F6D /* moan1.ogg in Resources */,
 				1351D6822AB5FFF30005440D /* Main.storyboard in Resources */,
+				13E9D9082ACB25D8002E2F6D /* moan3.ogg in Resources */,
+				13E9D9072ACB25D8002E2F6D /* moan2.ogg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

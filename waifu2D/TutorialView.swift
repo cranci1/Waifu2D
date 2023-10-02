@@ -9,12 +9,12 @@ struct TutorialSlideView: View {
             Image(imageName)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 250, height: 500) // Set the image size
-                .cornerRadius(20) // Optional: Add corner radius for a rounded look
+                .frame(width: 250, height: 500)
+                .cornerRadius(20)
 
             Text(text)
                 .font(.system(size: 18))
-                .multilineTextAlignment(.center) // Align the text to the center
+                .multilineTextAlignment(.center)
                 .padding(.bottom, 20)
         }
     }
