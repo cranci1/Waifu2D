@@ -244,7 +244,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				13F89A7C2AC033600013A4EA /* PBXTargetDependency */,
 				13BD53C92AB9D12800AF7808 /* PBXTargetDependency */,
 			);
 			name = waifu2D;
@@ -455,10 +454,6 @@
 			target = 13BD53BB2AB9D12600AF7808 /* widgetExtension */;
 			targetProxy = 13BD53C82AB9D12800AF7808 /* PBXContainerItemProxy */;
 		};
-		13F89A7C2AC033600013A4EA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 13F89A7B2AC033600013A4EA /* OnboardKit */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -616,7 +611,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.7.0;
+				MARKETING_VERSION = 0.7.5;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cranci.waifu2D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -653,7 +648,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.7.0;
+				MARKETING_VERSION = 0.7.5;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cranci.waifu2D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -671,7 +666,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MHW52KB748;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -693,7 +688,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MHW52KB748;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -716,7 +711,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MHW52KB748;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cranci.waifu2DUITests;
@@ -738,7 +733,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MHW52KB748;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cranci.waifu2DUITests;
@@ -857,25 +852,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		13F89A762AC033270013A4EA /* XCRemoteSwiftPackageReference "OnboardKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/NikolaKirev/OnboardKit";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		13F89A7B2AC033600013A4EA /* OnboardKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 13F89A762AC033270013A4EA /* XCRemoteSwiftPackageReference "OnboardKit" */;
-			productName = OnboardKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1351D66F2AB5FFF30005440D /* Project object */;
 }

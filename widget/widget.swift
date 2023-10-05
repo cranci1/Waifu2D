@@ -31,7 +31,7 @@ struct CustomWidget: Widget {
             CustomWidgetView(imageName: entry.imageName)
         }
         .configurationDisplayName("myWaifu2D Widget")
-        .description("myWaifu2D widget $$$$$$")
+        .description("widgets")
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge])
     }
 }

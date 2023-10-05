@@ -27,15 +27,16 @@ struct TutorialView: View {
     var body: some View {
         NavigationView {
             TabView(selection: $currentPage) {
-                TutorialSlideView(imageName: "variant", text: "Slide from Right to Left to switch variant.")
+                TutorialSlideView(imageName: "text", text: "Slide from Right to Left to switch variant.")
                     .tag(0)
-                TutorialSlideView(imageName: "text", text: "Slide from Left to Right to change text.")
+                TutorialSlideView(imageName: "variant", text: "Slide from Left to Right to change text.")
                     .tag(1)
                 TutorialSlideView(imageName: "color", text: "Slide from the Bottom to the Top to change the background colour.")
                     .tag(2)
                 TutorialSlideView(imageName: "settings", text: "Slide from the Top to the Bottom to open settings. Or just tripple tap on the screen.")
                     .tag(3)
             }
+            
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
             .navigationBarTitle("Tutorial", displayMode: .inline)
             .navigationBarItems(trailing: Button("Close") {
@@ -44,7 +45,6 @@ struct TutorialView: View {
         }
     }
 }
-
 
 
 
