@@ -4,11 +4,10 @@ struct SettingsView: View {
     @State private var isSettingsVisible = false
     @State private var isTutorialVisible = false
     
-    @Binding var isHapticEnabled: Bool
     @Binding var isHaptic2Enabled: Bool
-    @Binding var isAnimationEnabled: Bool
     @Binding var isGestureEnabled: Bool
     @Binding var isButtonEnabled: Bool
+    
     
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "N/A"
     let appBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "N/A"
@@ -23,17 +22,10 @@ struct SettingsView: View {
             Form {
                 Section(header: Text("General"), footer: Text("The haptic feedback is the vibration when switching variant/text. If you enable/disable 'Use Buttons' you need to restart the app to see them.")) {
                     
-                    Toggle(isOn: $isHapticEnabled, label: {
-                        Text("Haptic feedback for Variant")
-                    })
-                    
                     Toggle(isOn: $isHaptic2Enabled, label: {
                         Text("Haptic feedback for Text")
                     })
                     
-                    Toggle(isOn: $isAnimationEnabled, label: {
-                        Text("Animation when changing Variant")
-                    })
                 
                     Toggle(isOn: $isButtonEnabled, label: {
                         Text("Use Buttons")
@@ -114,9 +106,8 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView (
-            isHapticEnabled: .constant(false),
+            
             isHaptic2Enabled: .constant(false),
-            isAnimationEnabled: .constant(false),
             isGestureEnabled: .constant(true),
             isButtonEnabled: .constant(true)
         )

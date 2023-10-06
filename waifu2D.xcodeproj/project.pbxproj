@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		131077CB2ABCA195004AB5EE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CC65242ABC874000C0D90A /* SettingsView.swift */; };
 		133768202AB6E14F0040BABD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1351D6832AB5FFF50005440D /* Assets.xcassets */; };
 		133768212AB6E1500040BABD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1351D6832AB5FFF50005440D /* Assets.xcassets */; };
 		1351D67B2AB5FFF30005440D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351D67A2AB5FFF30005440D /* AppDelegate.swift */; };
@@ -27,6 +26,7 @@
 		13BD53C62AB9D12800AF7808 /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 13BD53C22AB9D12600AF7808 /* widget.intentdefinition */; };
 		13BD53C72AB9D12800AF7808 /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 13BD53C22AB9D12600AF7808 /* widget.intentdefinition */; };
 		13BD53CA2AB9D12800AF7808 /* widgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 13BD53BC2AB9D12600AF7808 /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		13CF07182AD03D5A001459DE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CC65242ABC874000C0D90A /* SettingsView.swift */; };
 		13E9D9072ACB25D8002E2F6D /* moan2.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 13E9D9032ACB25D8002E2F6D /* moan2.ogg */; };
 		13E9D9082ACB25D8002E2F6D /* moan3.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 13E9D9042ACB25D8002E2F6D /* moan3.ogg */; };
 		13E9D9092ACB25D8002E2F6D /* moan4.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 13E9D9052ACB25D8002E2F6D /* moan4.ogg */; };
@@ -400,9 +400,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13CF07182AD03D5A001459DE /* SettingsView.swift in Sources */,
 				135770232ACB07CE00615C66 /* TutorialView.swift in Sources */,
 				13B3BAE42AC33A92005AA8E6 /* NotificationManager.swift in Sources */,
-				131077CB2ABCA195004AB5EE /* SettingsView.swift in Sources */,
 				13BD53C72AB9D12800AF7808 /* widget.intentdefinition in Sources */,
 				1351D67F2AB5FFF30005440D /* ViewController.swift in Sources */,
 				1351D67B2AB5FFF30005440D /* AppDelegate.swift in Sources */,
@@ -611,7 +611,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.7.5;
+				MARKETING_VERSION = 0.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cranci.waifu2D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -648,7 +648,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.7.5;
+				MARKETING_VERSION = 0.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cranci.waifu2D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
