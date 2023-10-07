@@ -97,19 +97,32 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                                showSettingsButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
             
                                // Add the Photo picker button
-                               let chooseImageButton = UIButton(type: .system)
-                               let chooseImageIcon = UIImage(systemName: "photo", withConfiguration: showSettingsConfig)
-                               chooseImageButton.setImage(chooseImageIcon, for: .normal)
-                               chooseImageButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
-                                   return traitCollection.userInterfaceStyle == .light ? .black : .white
-                               }
-                               chooseImageButton.addTarget(self, action: #selector(chooseImage), for: .touchUpInside)
-                               chooseImageButton.translatesAutoresizingMaskIntoConstraints = false
-                               view.addSubview(chooseImageButton)
+            let chooseImageButton = UIButton(type: .system)
+            let chooseImageIcon = UIImage(systemName: "photo", withConfiguration: showSettingsConfig)
+            chooseImageButton.setImage(chooseImageIcon, for: .normal)
+            chooseImageButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
+                return traitCollection.userInterfaceStyle == .light ? .black : .white
+            }
+            chooseImageButton.addTarget(self, action: #selector(chooseImage), for: .touchUpInside)
+            chooseImageButton.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(chooseImageButton)
                         
-                               chooseImageButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-                               chooseImageButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16).isActive = true
+            chooseImageButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+            chooseImageButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16).isActive = true
             
+            let showGalleryButton = UIButton(type: .system)
+            let showGalleryConfig = UIImage.SymbolConfiguration(pointSize: 20)
+            let showGalleryIcon = UIImage(systemName: "photo.fill", withConfiguration: showGalleryConfig)
+            showGalleryButton.setImage(showGalleryIcon, for: .normal)
+            showGalleryButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
+                return traitCollection.userInterfaceStyle == .light ? .black : .white
+            }
+            showGalleryButton.addTarget(self, action: #selector(showGallery), for: .touchUpInside)
+            showGalleryButton.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(showGalleryButton)
+
+            showGalleryButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+            showGalleryButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16).isActive = true
                            }
         
         if let imageData = UserDefaults.standard.data(forKey: "selectedImageData"),
@@ -207,6 +220,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         @objc func handleTripleTap() {
                 showSettings()
             }
+    
+    
+    @objc func showGallery() {
+            // Pass your image data to the GalleryView
+            let galleryView = GalleryView(images: [
+                ImageInfo(name: "Luna Shirakawa", author: "@kimizero_anime", imageName: "luna"),
+                ImageInfo(name: "Mai Sakurajima half bunny", author: "@aobuta_anime", imageName: "mai-bunny-half"),
+                ImageInfo(name: "Mai Sakurajima bunny", author: "@aobuta_anime", imageName: "mai-bunny"),
+                ImageInfo(name: "Sakuta Azusagawa", author: "@aobuta_anime", imageName: "sakuta"),
+                ImageInfo(name: "Nagisa Shiota", author: "@ansatsu_anime", imageName: "nagisa"),
+                ImageInfo(name: "Kazuto Kirigaya", author: "@sao_anime", imageName: "kirito"),
+                ImageInfo(name: "Asuna Yuuki", author: "@sao_anime", imageName: "asuna"),
+                ImageInfo(name: "Aqua", author: "@konosubaanime", imageName: "aqua"),
+            ])
+
+            // Wrap the SwiftUI view in a UIHostingController
+            let hostingController = UIHostingController(rootView: galleryView)
+
+            // Present the hostingController
+            present(hostingController, animated: true, completion: nil)
+        }
     
         
     @objc func showSettings() {

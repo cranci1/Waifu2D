@@ -18,6 +18,8 @@
 		1351D69C2AB5FFF50005440D /* waifu2DUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351D69B2AB5FFF50005440D /* waifu2DUITests.swift */; };
 		1351D69E2AB5FFF50005440D /* waifu2DUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351D69D2AB5FFF50005440D /* waifu2DUITestsLaunchTests.swift */; };
 		135770232ACB07CE00615C66 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135770222ACB07CE00615C66 /* TutorialView.swift */; };
+		1380E5C42AD19DB700DD287F /* GalleryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1380E5C32AD19DB700DD287F /* GalleryItemView.swift */; };
+		1380E5C62AD19E1A00DD287F /* Gallery.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1380E5C52AD19E1A00DD287F /* Gallery.xcassets */; };
 		13B3BAE42AC33A92005AA8E6 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B3BAE32AC33A92005AA8E6 /* NotificationManager.swift */; };
 		13BD53BD2AB9D12600AF7808 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BD53A42AB9C83700AF7808 /* WidgetKit.framework */; };
 		13BD53BE2AB9D12600AF7808 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BD53A62AB9C83700AF7808 /* SwiftUI.framework */; };
@@ -86,6 +88,8 @@
 		1351D69B2AB5FFF50005440D /* waifu2DUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waifu2DUITests.swift; sourceTree = "<group>"; };
 		1351D69D2AB5FFF50005440D /* waifu2DUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waifu2DUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		135770222ACB07CE00615C66 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		1380E5C32AD19DB700DD287F /* GalleryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemView.swift; sourceTree = "<group>"; };
+		1380E5C52AD19E1A00DD287F /* Gallery.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Gallery.xcassets; sourceTree = "<group>"; };
 		13AA74002AC350AA008BAB6A /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		13AA74022AC350AA008BAB6A /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		13B3BAE32AC33A92005AA8E6 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 		1351D6792AB5FFF30005440D /* waifu2D */ = {
 			isa = PBXGroup;
 			children = (
+				1380E5C72AD19E2500DD287F /* Gallery */,
 				13E9D9022ACB25BF002E2F6D /* Sounds */,
 				1351D67A2AB5FFF30005440D /* AppDelegate.swift */,
 				1351D67C2AB5FFF30005440D /* SceneDelegate.swift */,
@@ -193,6 +198,15 @@
 				1351D69D2AB5FFF50005440D /* waifu2DUITestsLaunchTests.swift */,
 			);
 			path = waifu2DUITests;
+			sourceTree = "<group>";
+		};
+		1380E5C72AD19E2500DD287F /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				1380E5C32AD19DB700DD287F /* GalleryItemView.swift */,
+				1380E5C52AD19E1A00DD287F /* Gallery.xcassets */,
+			);
+			path = Gallery;
 			sourceTree = "<group>";
 		};
 		13BD53A32AB9C83700AF7808 /* Frameworks */ = {
@@ -364,6 +378,7 @@
 				1351D6842AB5FFF50005440D /* Assets.xcassets in Resources */,
 				13E9D90A2ACB25D8002E2F6D /* moan1.ogg in Resources */,
 				1351D6822AB5FFF30005440D /* Main.storyboard in Resources */,
+				1380E5C62AD19E1A00DD287F /* Gallery.xcassets in Resources */,
 				13E9D9082ACB25D8002E2F6D /* moan3.ogg in Resources */,
 				13E9D9072ACB25D8002E2F6D /* moan2.ogg in Resources */,
 			);
@@ -402,6 +417,7 @@
 			files = (
 				13CF07182AD03D5A001459DE /* SettingsView.swift in Sources */,
 				135770232ACB07CE00615C66 /* TutorialView.swift in Sources */,
+				1380E5C42AD19DB700DD287F /* GalleryItemView.swift in Sources */,
 				13B3BAE42AC33A92005AA8E6 /* NotificationManager.swift in Sources */,
 				13BD53C72AB9D12800AF7808 /* widget.intentdefinition in Sources */,
 				1351D67F2AB5FFF30005440D /* ViewController.swift in Sources */,
@@ -593,7 +609,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = MHW52KB748;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = waifu2D/Info.plist;
@@ -611,7 +627,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.8.0;
+				MARKETING_VERSION = 0.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cranci.waifu2D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -630,7 +646,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = MHW52KB748;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = waifu2D/Info.plist;
@@ -648,7 +664,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.8.0;
+				MARKETING_VERSION = 0.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cranci.waifu2D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
