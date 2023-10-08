@@ -154,21 +154,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.view.backgroundColor = savedColor
     }
         
-               textView.backgroundColor = UIColor(white: 1, alpha: 0)
-               textView.layer.cornerRadius = 8
-               textView.font = UIFont.systemFont(ofSize: 16)
-               textView.textAlignment = .center
-               textView.delegate = self
+        textView.backgroundColor = UIColor(white: 1, alpha: 0)
+        textView.layer.cornerRadius = 8
+        textView.font = UIFont.systemFont(ofSize: 16)
+        textView.textAlignment = .center
+        textView.delegate = self
 
-               // Add subviews
-               view.addSubview(textView)
+        // Add subviews
+        view.addSubview(textView)
 
-               // Layout constraints
-               textView.translatesAutoresizingMaskIntoConstraints = false
-               textView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-               textView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16).isActive = true
-               textView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.8).isActive = true
-               textView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        // Layout constraints
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        textView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16).isActive = true
+        textView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.5).isActive = true
+        textView.heightAnchor.constraint(equalToConstant: 80).isActive = true 
         
     }
     
