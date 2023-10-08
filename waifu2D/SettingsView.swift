@@ -20,10 +20,10 @@ struct SettingsView: View {
             .hidden()
             
             Form {
-                Section(header: Text("General"), footer: Text("The haptic feedback is the vibration when switching variant/text. If you enable/disable 'Use Buttons' you need to restart the app to see them.")) {
+                Section(header: Text("General"), footer: Text("The haptic feedback is the vibration when pressing a button. If you enable/disable 'Use Buttons' you need to restart the app to see them.")) {
                     
                     Toggle(isOn: $isHaptic2Enabled, label: {
-                        Text("Haptic feedback for Text")
+                        Text("Haptic feedback for all buttons")
                     })
                     
                 
@@ -38,7 +38,7 @@ struct SettingsView: View {
                 }
                 
                 
-                Section(header: Text("Tutorial"), footer: Text("To lazy to make it like onBoarding Sorry.")) {
+                Section(header: Text("Tutorial"), footer: Text("If you want to learn how getures works.")) {
                     Button("Show Tutorial") {
                         isTutorialVisible.toggle()
                     }
@@ -48,19 +48,20 @@ struct SettingsView: View {
                 }
                 
                 Section {
+                    
                     HStack {
-                        Text("☕ Support me on Ko-fi")
+                        Text("Submition form")
                     }
                     .foregroundColor(.gray)
                     .font(.system(size: 16, weight: .semibold))
                     .onTapGesture {
-                        if let url = URL(string: "https://ko-fi.com/cranci") {
+                        if let url = URL(string: "https://www.cranci.xyz/myWaifu2D/submit.html") {
                             UIApplication.shared.open(url)
                         }
                     }
                     
                     HStack {
-                        Text("📧 Contact me via Email ")
+                        Text("Submit waifu")
                     }
                     .foregroundColor(.gray)
                     .font(.system(size: 16, weight: .semibold))
@@ -78,17 +79,6 @@ struct SettingsView: View {
                         HStack {
                         Text("Build: \(appBuild)")
                         }
-                    
-                    HStack {
-                        Text("Github repo")
-                    }
-                    .font(.system(size: 16))
-                    .onTapGesture {
-                        if let url = URL(string: "https://github.com/cranci1/waifu2D/") {
-                            UIApplication.shared.open(url)
-                        }
-                    }
-                    
                 }
                 
             }

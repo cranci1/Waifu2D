@@ -70,15 +70,31 @@ struct GalleryItemView: View {
 
 struct GalleryView: View {
     let images: [ImageInfo]
+    @State private var searchText: String = ""
+
+    var filteredImages: [ImageInfo] {
+        if searchText.isEmpty {
+            return images
+        } else {
+            return images.filter { $0.name.lowercased().contains(searchText.lowercased()) || $0.author.lowercased().contains(searchText.lowercased()) }
+        }
+    }
 
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: Array(repeating: GridItem(), count: 2)) {
-                ForEach(images, id: \.imageName) { image in
-                    GalleryItemView(image: image)
+        VStack {
+            TextField("Search Waifu", text: $searchText)
+                .padding()
+                .background(RoundedRectangle(cornerRadius: 10).fill(Color.primaryBackground))
+                .padding()
+
+            ScrollView {
+                LazyVGrid(columns: Array(repeating: GridItem(), count: 2)) {
+                    ForEach(filteredImages, id: \.imageName) { image in
+                        GalleryItemView(image: image)
+                    }
                 }
+                .padding()
             }
-            .padding()
         }
     }
 }
@@ -152,7 +168,8 @@ func downloadAndSaveImage(imageName: String) {
 struct ContentView: View {
     let galleryImages: [ImageInfo] = [
         ImageInfo(name: "Luna Shirakawa", author: "@kimizero_anime", imageName: "luna"),
-        ImageInfo(name: "Mai Sakurajima half bunny", author: "@aobuta_anime", imageName: "mai-bunny-half"),
+        ImageInfo(name: "Mai Sakurajima", author: "@aobuta_anime", imageName: "mai"),
+        ImageInfo(name: "Mai Sakurajima bunny ears", author: "@aobuta_anime", imageName: "mai-bunny-half"),
         ImageInfo(name: "Mai Sakurajima bunny", author: "@aobuta_anime", imageName: "mai-bunny"),
         ImageInfo(name: "Sakuta Azusagawa", author: "@aobuta_anime", imageName: "sakuta"),
         ImageInfo(name: "Nagisa Shiota", author: "@ansatsu_anime", imageName: "nagisa"),

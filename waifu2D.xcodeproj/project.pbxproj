@@ -609,11 +609,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MHW52KB748;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = waifu2D/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = myWaifu2D;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need permission to save photos to your library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = Main;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -646,11 +647,12 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MHW52KB748;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = waifu2D/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = myWaifu2D;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need permission to save photos to your library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = Main;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

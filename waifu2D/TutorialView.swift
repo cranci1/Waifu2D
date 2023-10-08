@@ -15,7 +15,7 @@ struct TutorialSlideView: View {
             Text(text)
                 .font(.system(size: 18))
                 .multilineTextAlignment(.center)
-                .padding(.bottom, 20)
+                .padding(.bottom, 15)
         }
     }
 }
@@ -27,9 +27,9 @@ struct TutorialView: View {
     var body: some View {
         NavigationView {
             TabView(selection: $currentPage) {
-                TutorialSlideView(imageName: "text", text: "Slide from Right to Left to switch variant.")
+                TutorialSlideView(imageName: "gallery", text: "Slide from Right to Left to open the gallery")
                     .tag(0)
-                TutorialSlideView(imageName: "variant", text: "Slide from Left to Right to change text.")
+                TutorialSlideView(imageName: "photo", text: "Slide from Left to Right to choose an image")
                     .tag(1)
                 TutorialSlideView(imageName: "color", text: "Slide from the Bottom to the Top to change the background colour.")
                     .tag(2)
@@ -39,12 +39,9 @@ struct TutorialView: View {
             
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
             .navigationBarTitle("Tutorial", displayMode: .inline)
-            .navigationBarItems(trailing: Button("Close") {
+            .navigationBarItems(trailing: Button("close") {
                 isPresented = false
             })
         }
     }
 }
-
-
-

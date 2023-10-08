@@ -35,7 +35,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         view.addGestureRecognizer(tripleTapGesture)
                        
 
-                   
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeLeft))
+        swipeLeft.direction = .left
+        view.addGestureRecognizer(swipeLeft)
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeRight))
         swipeRight.direction = .right
@@ -65,40 +67,40 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if isButtonEnabled {
 
-                               // Add the showColorPickerButton
-                               let showColorPickerButton = UIButton(type: .system)
-                               let colorPickerConfig = UIImage.SymbolConfiguration(pointSize: 20)
-                               let colorPickerIcon = UIImage(systemName: "paintpalette", withConfiguration: colorPickerConfig)
-                               showColorPickerButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
+            let showColorPickerButton = UIButton(type: .system)
+            let colorPickerConfig = UIImage.SymbolConfiguration(pointSize: 20)
+            let colorPickerIcon = UIImage(systemName: "paintpalette", withConfiguration: colorPickerConfig)
+            showColorPickerButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
                                    return traitCollection.userInterfaceStyle == .light ? .black : .white
-                               }
-                               showColorPickerButton.setImage(colorPickerIcon, for: .normal)
-                               showColorPickerButton.addTarget(self, action: #selector(showColourPicker), for: .touchUpInside)
-                               showColorPickerButton.translatesAutoresizingMaskIntoConstraints = false
-                               view.addSubview(showColorPickerButton)
+            }
+            showColorPickerButton.setImage(colorPickerIcon, for: .normal)
+            showColorPickerButton.addTarget(self, action: #selector(showColourPicker), for: .touchUpInside)
+            showColorPickerButton.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(showColorPickerButton)
 
-                               showColorPickerButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-                               showColorPickerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+            showColorPickerButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+            showColorPickerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
 
             
-                               // Add the showSettingsButton
-                               let showSettingsButton = UIButton(type: .system)
-                               let showSettingsConfig = UIImage.SymbolConfiguration(pointSize: 20)
-                               let showSettingsIcon = UIImage(systemName: "gear", withConfiguration: showSettingsConfig)
-                               showSettingsButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
-                                   return traitCollection.userInterfaceStyle == .light ? .black : .white
-                               }
-                               showSettingsButton.setImage(showSettingsIcon, for: .normal)
-                               showSettingsButton.addTarget(self, action: #selector(showSettings), for: .touchUpInside)
-                               showSettingsButton.translatesAutoresizingMaskIntoConstraints = false
-                               view.addSubview(showSettingsButton)
 
-                               showSettingsButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-                               showSettingsButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+            let showSettingsButton = UIButton(type: .system)
+            let showSettingsConfig = UIImage.SymbolConfiguration(pointSize: 20)
+            let showSettingsIcon = UIImage(systemName: "gear", withConfiguration: showSettingsConfig)
+            showSettingsButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
+                                   return traitCollection.userInterfaceStyle == .light ? .black : .white
+            }
+            showSettingsButton.setImage(showSettingsIcon, for: .normal)
+            showSettingsButton.addTarget(self, action: #selector(showSettings), for: .touchUpInside)
+            showSettingsButton.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(showSettingsButton)
+
+            showSettingsButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+            showSettingsButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
             
-                               // Add the Photo picker button
+
             let chooseImageButton = UIButton(type: .system)
-            let chooseImageIcon = UIImage(systemName: "photo", withConfiguration: showSettingsConfig)
+            let chooseImageConfig = UIImage.SymbolConfiguration(pointSize: 25)
+            let chooseImageIcon = UIImage(systemName: "photo.circle", withConfiguration: chooseImageConfig)
             chooseImageButton.setImage(chooseImageIcon, for: .normal)
             chooseImageButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
                 return traitCollection.userInterfaceStyle == .light ? .black : .white
@@ -112,7 +114,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             let showGalleryButton = UIButton(type: .system)
             let showGalleryConfig = UIImage.SymbolConfiguration(pointSize: 20)
-            let showGalleryIcon = UIImage(systemName: "photo.fill", withConfiguration: showGalleryConfig)
+            let showGalleryIcon = UIImage(systemName: "photo.on.rectangle", withConfiguration: showGalleryConfig)
             showGalleryButton.setImage(showGalleryIcon, for: .normal)
             showGalleryButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
                 return traitCollection.userInterfaceStyle == .light ? .black : .white
@@ -123,6 +125,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
             showGalleryButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
             showGalleryButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16).isActive = true
+            
+            
                            }
         
         if let imageData = UserDefaults.standard.data(forKey: "selectedImageData"),
@@ -173,6 +177,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
            imagePicker.delegate = self
            imagePicker.sourceType = .photoLibrary
            present(imagePicker, animated: true, completion: nil)
+        
+        if isHaptic2Enabled {
+                feedbackGenerator.selectionChanged()
+        }
+        
        }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -216,6 +225,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
      }
     
+    @objc func handleSwipeLeft(gesture: UISwipeGestureRecognizer) {
+        if isGestureEnabled {
+            if gesture.direction == .left {
+                showGallery()
+            }
+        }
+     }
+    
     
         @objc func handleTripleTap() {
                 showSettings()
@@ -226,7 +243,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             // Pass your image data to the GalleryView
             let galleryView = GalleryView(images: [
                 ImageInfo(name: "Luna Shirakawa", author: "@kimizero_anime", imageName: "luna"),
-                ImageInfo(name: "Mai Sakurajima half bunny", author: "@aobuta_anime", imageName: "mai-bunny-half"),
+                ImageInfo(name: "Mai Sakurajima", author: "@aobuta_anime", imageName: "mai"),
+                ImageInfo(name: "Mai Sakurajima bunny ears", author: "@aobuta_anime", imageName: "mai-bunny-half"),
                 ImageInfo(name: "Mai Sakurajima bunny", author: "@aobuta_anime", imageName: "mai-bunny"),
                 ImageInfo(name: "Sakuta Azusagawa", author: "@aobuta_anime", imageName: "sakuta"),
                 ImageInfo(name: "Nagisa Shiota", author: "@ansatsu_anime", imageName: "nagisa"),
@@ -240,7 +258,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
             // Present the hostingController
             present(hostingController, animated: true, completion: nil)
+        
+        if isHaptic2Enabled {
+                feedbackGenerator.selectionChanged()
         }
+    }
     
         
     @objc func showSettings() {
@@ -252,6 +274,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         let settingsViewController = UIHostingController(rootView: settingsView)
         present(settingsViewController, animated: true, completion: nil)
+        
+        if isHaptic2Enabled {
+                feedbackGenerator.selectionChanged()
+        }
     }
     
 
@@ -259,8 +285,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
           let picker = UIColorPickerViewController()
           picker.delegate = self
           self.present(picker, animated: true, completion: nil)
+    
+    if isHaptic2Enabled {
+            feedbackGenerator.selectionChanged()
     }
     
+  }
+
     
 }
 
