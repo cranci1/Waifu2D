@@ -13,8 +13,8 @@ Remember that the UI may change during time ( already changed [ too lazy to chan
 
 GESTURES:
 
-- swipe Left = Variant change (for left i mean that you need to start from right and go left)
-- swipe right = Text changed (for right i mean that you need to start from left and go right)
+- swipe Left = Show Gallery (for left i mean that you need to start from right and go left)
+- swipe right = Select image (for right i mean that you need to start from left and go right)
 - swipe up = Colour picker (start down go up)
 - swipe down = Settings (start up go down)
 
