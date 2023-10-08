@@ -7,16 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		133768202AB6E14F0040BABD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1351D6832AB5FFF50005440D /* Assets.xcassets */; };
-		133768212AB6E1500040BABD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1351D6832AB5FFF50005440D /* Assets.xcassets */; };
 		1351D67B2AB5FFF30005440D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351D67A2AB5FFF30005440D /* AppDelegate.swift */; };
 		1351D67D2AB5FFF30005440D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351D67C2AB5FFF30005440D /* SceneDelegate.swift */; };
 		1351D67F2AB5FFF30005440D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351D67E2AB5FFF30005440D /* ViewController.swift */; };
 		1351D6822AB5FFF30005440D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1351D6802AB5FFF30005440D /* Main.storyboard */; };
 		1351D6842AB5FFF50005440D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1351D6832AB5FFF50005440D /* Assets.xcassets */; };
-		1351D6922AB5FFF50005440D /* waifu2DTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351D6912AB5FFF50005440D /* waifu2DTests.swift */; };
-		1351D69C2AB5FFF50005440D /* waifu2DUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351D69B2AB5FFF50005440D /* waifu2DUITests.swift */; };
-		1351D69E2AB5FFF50005440D /* waifu2DUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351D69D2AB5FFF50005440D /* waifu2DUITestsLaunchTests.swift */; };
 		135770232ACB07CE00615C66 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135770222ACB07CE00615C66 /* TutorialView.swift */; };
 		1380E5C42AD19DB700DD287F /* GalleryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1380E5C32AD19DB700DD287F /* GalleryItemView.swift */; };
 		1380E5C62AD19E1A00DD287F /* Gallery.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1380E5C52AD19E1A00DD287F /* Gallery.xcassets */; };
@@ -36,20 +31,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1351D68E2AB5FFF50005440D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1351D66F2AB5FFF30005440D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1351D6762AB5FFF30005440D;
-			remoteInfo = waifu2D;
-		};
-		1351D6982AB5FFF50005440D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1351D66F2AB5FFF30005440D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1351D6762AB5FFF30005440D;
-			remoteInfo = waifu2D;
-		};
 		13BD53C82AB9D12800AF7808 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1351D66F2AB5FFF30005440D /* Project object */;
@@ -82,11 +63,6 @@
 		1351D6812AB5FFF30005440D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1351D6832AB5FFF50005440D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1351D6882AB5FFF50005440D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1351D68D2AB5FFF50005440D /* waifu2DTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = waifu2DTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1351D6912AB5FFF50005440D /* waifu2DTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waifu2DTests.swift; sourceTree = "<group>"; };
-		1351D6972AB5FFF50005440D /* waifu2DUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = waifu2DUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1351D69B2AB5FFF50005440D /* waifu2DUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waifu2DUITests.swift; sourceTree = "<group>"; };
-		1351D69D2AB5FFF50005440D /* waifu2DUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waifu2DUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		135770222ACB07CE00615C66 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		1380E5C32AD19DB700DD287F /* GalleryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemView.swift; sourceTree = "<group>"; };
 		1380E5C52AD19E1A00DD287F /* Gallery.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Gallery.xcassets; sourceTree = "<group>"; };
@@ -115,20 +91,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1351D68A2AB5FFF50005440D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1351D6942AB5FFF50005440D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13BD53B92AB9D12600AF7808 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,8 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				1351D6792AB5FFF30005440D /* waifu2D */,
-				1351D6902AB5FFF50005440D /* waifu2DTests */,
-				1351D69A2AB5FFF50005440D /* waifu2DUITests */,
 				13BD53BF2AB9D12600AF7808 /* widget */,
 				13BD53A32AB9C83700AF7808 /* Frameworks */,
 				1351D6782AB5FFF30005440D /* Products */,
@@ -158,8 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				1351D6772AB5FFF30005440D /* waifu2D.app */,
-				1351D68D2AB5FFF50005440D /* waifu2DTests.xctest */,
-				1351D6972AB5FFF50005440D /* waifu2DUITests.xctest */,
 				13BD53BC2AB9D12600AF7808 /* widgetExtension.appex */,
 			);
 			name = Products;
@@ -181,23 +139,6 @@
 				1351D6882AB5FFF50005440D /* Info.plist */,
 			);
 			path = waifu2D;
-			sourceTree = "<group>";
-		};
-		1351D6902AB5FFF50005440D /* waifu2DTests */ = {
-			isa = PBXGroup;
-			children = (
-				1351D6912AB5FFF50005440D /* waifu2DTests.swift */,
-			);
-			path = waifu2DTests;
-			sourceTree = "<group>";
-		};
-		1351D69A2AB5FFF50005440D /* waifu2DUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1351D69B2AB5FFF50005440D /* waifu2DUITests.swift */,
-				1351D69D2AB5FFF50005440D /* waifu2DUITestsLaunchTests.swift */,
-			);
-			path = waifu2DUITests;
 			sourceTree = "<group>";
 		};
 		1380E5C72AD19E2500DD287F /* Gallery */ = {
@@ -267,42 +208,6 @@
 			productReference = 1351D6772AB5FFF30005440D /* waifu2D.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1351D68C2AB5FFF50005440D /* waifu2DTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1351D6A42AB5FFF50005440D /* Build configuration list for PBXNativeTarget "waifu2DTests" */;
-			buildPhases = (
-				1351D6892AB5FFF50005440D /* Sources */,
-				1351D68A2AB5FFF50005440D /* Frameworks */,
-				1351D68B2AB5FFF50005440D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1351D68F2AB5FFF50005440D /* PBXTargetDependency */,
-			);
-			name = waifu2DTests;
-			productName = waifu2DTests;
-			productReference = 1351D68D2AB5FFF50005440D /* waifu2DTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		1351D6962AB5FFF50005440D /* waifu2DUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1351D6A72AB5FFF50005440D /* Build configuration list for PBXNativeTarget "waifu2DUITests" */;
-			buildPhases = (
-				1351D6932AB5FFF50005440D /* Sources */,
-				1351D6942AB5FFF50005440D /* Frameworks */,
-				1351D6952AB5FFF50005440D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1351D6992AB5FFF50005440D /* PBXTargetDependency */,
-			);
-			name = waifu2DUITests;
-			productName = waifu2DUITests;
-			productReference = 1351D6972AB5FFF50005440D /* waifu2DUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		13BD53BB2AB9D12600AF7808 /* widgetExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13BD53CD2AB9D12900AF7808 /* Build configuration list for PBXNativeTarget "widgetExtension" */;
@@ -333,14 +238,6 @@
 					1351D6762AB5FFF30005440D = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
-					1351D68C2AB5FFF50005440D = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = 1351D6762AB5FFF30005440D;
-					};
-					1351D6962AB5FFF50005440D = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = 1351D6762AB5FFF30005440D;
-					};
 					13BD53BB2AB9D12600AF7808 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -362,8 +259,6 @@
 			projectRoot = "";
 			targets = (
 				1351D6762AB5FFF30005440D /* waifu2D */,
-				1351D68C2AB5FFF50005440D /* waifu2DTests */,
-				1351D6962AB5FFF50005440D /* waifu2DUITests */,
 				13BD53BB2AB9D12600AF7808 /* widgetExtension */,
 			);
 		};
@@ -381,22 +276,6 @@
 				1380E5C62AD19E1A00DD287F /* Gallery.xcassets in Resources */,
 				13E9D9082ACB25D8002E2F6D /* moan3.ogg in Resources */,
 				13E9D9072ACB25D8002E2F6D /* moan2.ogg in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1351D68B2AB5FFF50005440D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				133768202AB6E14F0040BABD /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1351D6952AB5FFF50005440D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				133768212AB6E1500040BABD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,23 +305,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1351D6892AB5FFF50005440D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1351D6922AB5FFF50005440D /* waifu2DTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1351D6932AB5FFF50005440D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1351D69C2AB5FFF50005440D /* waifu2DUITests.swift in Sources */,
-				1351D69E2AB5FFF50005440D /* waifu2DUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13BD53B82AB9D12600AF7808 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -455,16 +317,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1351D68F2AB5FFF50005440D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1351D6762AB5FFF30005440D /* waifu2D */;
-			targetProxy = 1351D68E2AB5FFF50005440D /* PBXContainerItemProxy */;
-		};
-		1351D6992AB5FFF50005440D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1351D6762AB5FFF30005440D /* waifu2D */;
-			targetProxy = 1351D6982AB5FFF50005440D /* PBXContainerItemProxy */;
-		};
 		13BD53C92AB9D12800AF7808 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 13BD53BB2AB9D12600AF7808 /* widgetExtension */;
@@ -677,94 +529,6 @@
 			};
 			name = Release;
 		};
-		1351D6A52AB5FFF50005440D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.cranci.waifu2DTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/waifu2D.app/waifu2D";
-			};
-			name = Debug;
-		};
-		1351D6A62AB5FFF50005440D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.cranci.waifu2DTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/waifu2D.app/waifu2D";
-			};
-			name = Release;
-		};
-		1351D6A82AB5FFF50005440D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.cranci.waifu2DUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = waifu2D;
-			};
-			name = Debug;
-		};
-		1351D6A92AB5FFF50005440D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.cranci.waifu2DUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = waifu2D;
-			};
-			name = Release;
-		};
 		13BD53CB2AB9D12900AF7808 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -838,24 +602,6 @@
 			buildConfigurations = (
 				1351D6A22AB5FFF50005440D /* Debug */,
 				1351D6A32AB5FFF50005440D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1351D6A42AB5FFF50005440D /* Build configuration list for PBXNativeTarget "waifu2DTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1351D6A52AB5FFF50005440D /* Debug */,
-				1351D6A62AB5FFF50005440D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1351D6A72AB5FFF50005440D /* Build configuration list for PBXNativeTarget "waifu2DUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1351D6A82AB5FFF50005440D /* Debug */,
-				1351D6A92AB5FFF50005440D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
