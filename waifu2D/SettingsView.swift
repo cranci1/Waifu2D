@@ -7,7 +7,6 @@ struct SettingsView: View {
     @Binding var isHaptic2Enabled: Bool
     @Binding var isGestureEnabled: Bool
     @Binding var isButtonEnabled: Bool
-    @Binding var isSoundEnabled: Bool
     
     
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "N/A"
@@ -25,10 +24,6 @@ struct SettingsView: View {
                     
                     Toggle(isOn: $isHaptic2Enabled, label: {
                         Text("Haptic feedback for all buttons")
-                    })
-                    
-                    Toggle(isOn: $isSoundEnabled, label: {
-                        Text("Sound Effects")
                     })
                 
                     Toggle(isOn: $isButtonEnabled, label: {
@@ -103,8 +98,7 @@ struct SettingsView_Previews: PreviewProvider {
             
             isHaptic2Enabled: .constant(false),
             isGestureEnabled: .constant(true),
-            isButtonEnabled: .constant(true),
-            isSoundEnabled: .constant(false)
+            isButtonEnabled: .constant(true)
         )
             .preferredColorScheme(.dark)
     }

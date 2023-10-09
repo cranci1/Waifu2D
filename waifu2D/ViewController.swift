@@ -7,7 +7,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @AppStorage("isHaptic2Enabled") private var isHaptic2Enabled = false
     @AppStorage("isButtonEnabled") private var isButtonEnabled = true
     @AppStorage("isGestureEnabled") private var isGestureEnabled = true
-    @AppStorage("isSoundEnabled") private var isSoundEnabled =  false
 
     
     let textView = UITextView()
@@ -271,8 +270,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let settingsView = SettingsView(
             isHaptic2Enabled: $isHaptic2Enabled,
             isGestureEnabled: $isGestureEnabled,
-            isButtonEnabled: $isButtonEnabled,
-            isSoundEnabled: $isSoundEnabled
+            isButtonEnabled: $isButtonEnabled
         )
 
         let settingsViewController = UIHostingController(rootView: settingsView)

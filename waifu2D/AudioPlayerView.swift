@@ -49,7 +49,7 @@ class AudioPlayerView: UIView {
 
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         let center = CGPoint(x: bounds.midX, y: bounds.midY)
-        let touchRange: CGFloat = 60.0 // Increase the touch range here
+        let touchRange: CGFloat = 95.0 // Increase the touch range here
 
         return hypot(point.x - center.x, point.y - center.y) < touchRange
     }
