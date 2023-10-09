@@ -7,8 +7,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @AppStorage("isHaptic2Enabled") private var isHaptic2Enabled = false
     @AppStorage("isButtonEnabled") private var isButtonEnabled = true
     @AppStorage("isGestureEnabled") private var isGestureEnabled = true
+    @AppStorage("isSoundEnabled") private var isSoundEnabled =  false
 
-    
     
     let textView = UITextView()
     let imageView = UIImageView()
@@ -29,6 +29,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        let audioPlayerView = AudioPlayerView(frame: view.bounds)
+        view.addSubview(audioPlayerView)
+        
         
         let tripleTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTripleTap))
         tripleTapGesture.numberOfTapsRequired = 3
@@ -266,7 +271,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let settingsView = SettingsView(
             isHaptic2Enabled: $isHaptic2Enabled,
             isGestureEnabled: $isGestureEnabled,
-            isButtonEnabled: $isButtonEnabled
+            isButtonEnabled: $isButtonEnabled,
+            isSoundEnabled: $isSoundEnabled
         )
 
         let settingsViewController = UIHostingController(rootView: settingsView)

@@ -24,6 +24,17 @@
 		13BD53C72AB9D12800AF7808 /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 13BD53C22AB9D12600AF7808 /* widget.intentdefinition */; };
 		13BD53CA2AB9D12800AF7808 /* widgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 13BD53BC2AB9D12600AF7808 /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		13C791622AD44CDE00A2D808 /* moan1.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 13C791612AD44CDE00A2D808 /* moan1.ogg */; };
+		13C791642AD45F1900A2D808 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C791632AD45F1900A2D808 /* AudioPlayerView.swift */; };
+		13C791662AD45F2300A2D808 /* ara.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 13C791652AD45F2300A2D808 /* ara.mp3 */; };
+		13C791682AD45F2800A2D808 /* uwu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 13C791672AD45F2700A2D808 /* uwu.mp3 */; };
+		13C791832AD4647000A2D808 /* onichan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 13C7917B2AD4646F00A2D808 /* onichan.mp3 */; };
+		13C791842AD4647000A2D808 /* nya.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 13C7917C2AD4646F00A2D808 /* nya.mp3 */; };
+		13C791852AD4647000A2D808 /* baka.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 13C7917D2AD4646F00A2D808 /* baka.mp3 */; };
+		13C791862AD4647000A2D808 /* huge.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 13C7917E2AD4646F00A2D808 /* huge.mp3 */; };
+		13C791872AD4647000A2D808 /* tuturu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 13C7917F2AD4646F00A2D808 /* tuturu.mp3 */; };
+		13C791882AD4647000A2D808 /* yamede.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 13C791802AD4646F00A2D808 /* yamede.mp3 */; };
+		13C791892AD4647000A2D808 /* ahh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 13C791812AD4646F00A2D808 /* ahh.mp3 */; };
+		13C7918A2AD4647000A2D808 /* sugoi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 13C791822AD4647000A2D808 /* sugoi.mp3 */; };
 		13CF07182AD03D5A001459DE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CC65242ABC874000C0D90A /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +85,17 @@
 		13BD53C32AB9D12800AF7808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13BD53C52AB9D12800AF7808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13C791612AD44CDE00A2D808 /* moan1.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = moan1.ogg; sourceTree = "<group>"; };
+		13C791632AD45F1900A2D808 /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
+		13C791652AD45F2300A2D808 /* ara.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ara.mp3; sourceTree = "<group>"; };
+		13C791672AD45F2700A2D808 /* uwu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = uwu.mp3; sourceTree = "<group>"; };
+		13C7917B2AD4646F00A2D808 /* onichan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = onichan.mp3; sourceTree = "<group>"; };
+		13C7917C2AD4646F00A2D808 /* nya.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nya.mp3; sourceTree = "<group>"; };
+		13C7917D2AD4646F00A2D808 /* baka.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = baka.mp3; sourceTree = "<group>"; };
+		13C7917E2AD4646F00A2D808 /* huge.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = huge.mp3; sourceTree = "<group>"; };
+		13C7917F2AD4646F00A2D808 /* tuturu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tuturu.mp3; sourceTree = "<group>"; };
+		13C791802AD4646F00A2D808 /* yamede.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yamede.mp3; sourceTree = "<group>"; };
+		13C791812AD4646F00A2D808 /* ahh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ahh.mp3; sourceTree = "<group>"; };
+		13C791822AD4647000A2D808 /* sugoi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sugoi.mp3; sourceTree = "<group>"; };
 		13CC65242ABC874000C0D90A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,11 +145,12 @@
 				13C7915E2AD44C9D00A2D808 /* Sound */,
 				1380E5C72AD19E2500DD287F /* Gallery */,
 				1351D67A2AB5FFF30005440D /* AppDelegate.swift */,
+				13C791632AD45F1900A2D808 /* AudioPlayerView.swift */,
 				1351D67C2AB5FFF30005440D /* SceneDelegate.swift */,
 				13CC65242ABC874000C0D90A /* SettingsView.swift */,
-				1351D67E2AB5FFF30005440D /* ViewController.swift */,
 				13B3BAE32AC33A92005AA8E6 /* NotificationManager.swift */,
 				135770222ACB07CE00615C66 /* TutorialView.swift */,
+				1351D67E2AB5FFF30005440D /* ViewController.swift */,
 				1351D6832AB5FFF50005440D /* Assets.xcassets */,
 				1351D6802AB5FFF30005440D /* Main.storyboard */,
 				1351D6882AB5FFF50005440D /* Info.plist */,
@@ -170,6 +193,16 @@
 		13C7915E2AD44C9D00A2D808 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				13C791812AD4646F00A2D808 /* ahh.mp3 */,
+				13C7917D2AD4646F00A2D808 /* baka.mp3 */,
+				13C7917E2AD4646F00A2D808 /* huge.mp3 */,
+				13C7917C2AD4646F00A2D808 /* nya.mp3 */,
+				13C7917B2AD4646F00A2D808 /* onichan.mp3 */,
+				13C791822AD4647000A2D808 /* sugoi.mp3 */,
+				13C7917F2AD4646F00A2D808 /* tuturu.mp3 */,
+				13C791802AD4646F00A2D808 /* yamede.mp3 */,
+				13C791652AD45F2300A2D808 /* ara.mp3 */,
+				13C791672AD45F2700A2D808 /* uwu.mp3 */,
 				13C791612AD44CDE00A2D808 /* moan1.ogg */,
 			);
 			path = Sound;
@@ -260,9 +293,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13C791832AD4647000A2D808 /* onichan.mp3 in Resources */,
+				13C791862AD4647000A2D808 /* huge.mp3 in Resources */,
+				13C791682AD45F2800A2D808 /* uwu.mp3 in Resources */,
+				13C791852AD4647000A2D808 /* baka.mp3 in Resources */,
+				13C7918A2AD4647000A2D808 /* sugoi.mp3 in Resources */,
+				13C791892AD4647000A2D808 /* ahh.mp3 in Resources */,
 				13C791622AD44CDE00A2D808 /* moan1.ogg in Resources */,
+				13C791882AD4647000A2D808 /* yamede.mp3 in Resources */,
 				1351D6842AB5FFF50005440D /* Assets.xcassets in Resources */,
 				1351D6822AB5FFF30005440D /* Main.storyboard in Resources */,
+				13C791872AD4647000A2D808 /* tuturu.mp3 in Resources */,
+				13C791842AD4647000A2D808 /* nya.mp3 in Resources */,
+				13C791662AD45F2300A2D808 /* ara.mp3 in Resources */,
 				1380E5C62AD19E1A00DD287F /* Gallery.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +330,7 @@
 				1380E5C42AD19DB700DD287F /* GalleryItemView.swift in Sources */,
 				13B3BAE42AC33A92005AA8E6 /* NotificationManager.swift in Sources */,
 				13BD53C72AB9D12800AF7808 /* widget.intentdefinition in Sources */,
+				13C791642AD45F1900A2D808 /* AudioPlayerView.swift in Sources */,
 				1351D67F2AB5FFF30005440D /* ViewController.swift in Sources */,
 				1351D67B2AB5FFF30005440D /* AppDelegate.swift in Sources */,
 				1351D67D2AB5FFF30005440D /* SceneDelegate.swift in Sources */,
