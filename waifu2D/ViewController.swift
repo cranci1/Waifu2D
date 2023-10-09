@@ -168,7 +168,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         textView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         textView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16).isActive = true
         textView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.5).isActive = true
-        textView.heightAnchor.constraint(equalToConstant: 80).isActive = true 
+        textView.heightAnchor.constraint(equalToConstant: 80).isActive = true
         
     }
     
@@ -246,9 +246,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 ImageInfo(name: "Mai Sakurajima", author: "@aobuta_anime", imageName: "mai"),
                 ImageInfo(name: "Mai Sakurajima bunny ears", author: "@aobuta_anime", imageName: "mai-bunny-half"),
                 ImageInfo(name: "Mai Sakurajima bunny", author: "@aobuta_anime", imageName: "mai-bunny"),
-                ImageInfo(name: "Sakuta Azusagawa", author: "@aobuta_anime", imageName: "sakuta"),
-                ImageInfo(name: "Nagisa Shiota", author: "@ansatsu_anime", imageName: "nagisa"),
-                ImageInfo(name: "Kazuto Kirigaya", author: "@sao_anime", imageName: "kirito"),
                 ImageInfo(name: "Asuna Yuuki", author: "@sao_anime", imageName: "asuna"),
                 ImageInfo(name: "Aqua", author: "@konosubaanime", imageName: "aqua"),
             ])
@@ -329,4 +326,3 @@ extension ViewController: UITextViewDelegate {
         return true
     }
 }
-

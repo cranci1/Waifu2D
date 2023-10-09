@@ -56,11 +56,6 @@ class NotificationManager {
             return notificationTexts.randomElement() ?? "I miss you sempai"
         }
 
-        func getRandomSound() -> String {
-            let soundFiles = ["moan1", "moan2", "moan3", "moan4"]
-            return soundFiles.randomElement() ?? "moan1"
-        }
-
         let notificationInterval: TimeInterval = 18000
         var delay: TimeInterval = 18000
 
@@ -68,7 +63,7 @@ class NotificationManager {
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: false)
             content.title = "Sweet Missings 💕"
             content.body = getRandomText()
-            content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "\(getRandomSound()).ogg"))
+            content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "moan1.ogg"))
 
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request) { (error) in

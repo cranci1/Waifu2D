@@ -171,9 +171,6 @@ struct ContentView: View {
         ImageInfo(name: "Mai Sakurajima", author: "@aobuta_anime", imageName: "mai"),
         ImageInfo(name: "Mai Sakurajima bunny ears", author: "@aobuta_anime", imageName: "mai-bunny-half"),
         ImageInfo(name: "Mai Sakurajima bunny", author: "@aobuta_anime", imageName: "mai-bunny"),
-        ImageInfo(name: "Sakuta Azusagawa", author: "@aobuta_anime", imageName: "sakuta"),
-        ImageInfo(name: "Nagisa Shiota", author: "@ansatsu_anime", imageName: "nagisa"),
-        ImageInfo(name: "Kazuto Kirigaya", author: "@sao_anime", imageName: "kirito"),
         ImageInfo(name: "Asuna Yuuki", author: "@sao_anime", imageName: "asuna"),
         ImageInfo(name: "Aqua", author: "@konosubaanime", imageName: "aqua"),
     ]
