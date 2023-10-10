@@ -36,6 +36,7 @@
 		13C791892AD4647000A2D808 /* ahh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 13C791812AD4646F00A2D808 /* ahh.mp3 */; };
 		13C7918A2AD4647000A2D808 /* sugoi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 13C791822AD4647000A2D808 /* sugoi.mp3 */; };
 		13CF07182AD03D5A001459DE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CC65242ABC874000C0D90A /* SettingsView.swift */; };
+		13EB065E2AD577EF008D33F5 /* gah.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 13EB065D2AD577EF008D33F5 /* gah.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		13C791812AD4646F00A2D808 /* ahh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ahh.mp3; sourceTree = "<group>"; };
 		13C791822AD4647000A2D808 /* sugoi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sugoi.mp3; sourceTree = "<group>"; };
 		13CC65242ABC874000C0D90A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		13EB065D2AD577EF008D33F5 /* gah.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gah.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				13C7917D2AD4646F00A2D808 /* baka.mp3 */,
 				13C7917E2AD4646F00A2D808 /* huge.mp3 */,
 				13C7917C2AD4646F00A2D808 /* nya.mp3 */,
+				13EB065D2AD577EF008D33F5 /* gah.mp3 */,
 				13C7917B2AD4646F00A2D808 /* onichan.mp3 */,
 				13C791822AD4647000A2D808 /* sugoi.mp3 */,
 				13C7917F2AD4646F00A2D808 /* tuturu.mp3 */,
@@ -299,6 +302,7 @@
 				13C791852AD4647000A2D808 /* baka.mp3 in Resources */,
 				13C7918A2AD4647000A2D808 /* sugoi.mp3 in Resources */,
 				13C791892AD4647000A2D808 /* ahh.mp3 in Resources */,
+				13EB065E2AD577EF008D33F5 /* gah.mp3 in Resources */,
 				13C791622AD44CDE00A2D808 /* moan1.ogg in Resources */,
 				13C791882AD4647000A2D808 /* yamede.mp3 in Resources */,
 				1351D6842AB5FFF50005440D /* Assets.xcassets in Resources */,

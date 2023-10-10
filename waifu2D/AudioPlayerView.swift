@@ -6,7 +6,7 @@ class AudioPlayerView: UIView {
     private var audioPlayer: AVAudioPlayer?
 
     // List of available audio file names
-    private let availableAudioFiles = ["ahh", "baka", "huge", "nya", "onichan", "sugoi", "tuturu", "yamede", "ara", "uwu", "moan1"]
+    private let availableAudioFiles = ["ahh", "baka", "huge", "nya", "onichan", "sugoi", "tuturu", "yamede", "ara", "uwu", "moan1", "gah"]
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,7 +49,7 @@ class AudioPlayerView: UIView {
 
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         let center = CGPoint(x: bounds.midX, y: bounds.midY)
-        let touchRange: CGFloat = 95.0 // Increase the touch range here
+        let touchRange: CGFloat = 105.0 // Increase the touch range here
 
         return hypot(point.x - center.x, point.y - center.y) < touchRange
     }
