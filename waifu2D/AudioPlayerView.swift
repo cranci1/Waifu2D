@@ -6,7 +6,7 @@ class AudioPlayerView: UIView {
     private var audioPlayer: AVAudioPlayer?
 
     // List of available audio file names
-    private let availableAudioFiles = ["ahh", "baka", "huge", "nya", "onichan", "sugoi", "tuturu", "yamede", "ara", "uwu", "moan1", "gah"]
+    private let availableAudioFiles = ["baka", "huge", "nya", "onichan", "sugoi", "tuturu", "yamede", "ara", "uwu", "gah"]
 
     override init(frame: CGRect) {
         super.init(frame: frame)

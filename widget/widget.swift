@@ -6,7 +6,7 @@ struct CustomWidgetView: View {
 
     var body: some View {
         ZStack {
-            Color(hex: "202020") // Set the background color
+            Color(hex: "202020")
 
             VStack {
                 Spacer()
@@ -30,8 +30,8 @@ struct CustomWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             CustomWidgetView(imageName: entry.imageName)
         }
-        .configurationDisplayName("myWaifu2D Widget")
-        .description("widgets")
+        .configurationDisplayName("myWaifu2D's Widget")
+        .description("")
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge])
     }
 }
