@@ -12,7 +12,6 @@
 		1351D67F2AB5FFF30005440D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351D67E2AB5FFF30005440D /* ViewController.swift */; };
 		1351D6822AB5FFF30005440D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1351D6802AB5FFF30005440D /* Main.storyboard */; };
 		1351D6842AB5FFF50005440D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1351D6832AB5FFF50005440D /* Assets.xcassets */; };
-		135770232ACB07CE00615C66 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135770222ACB07CE00615C66 /* TutorialView.swift */; };
 		1380E5C42AD19DB700DD287F /* GalleryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1380E5C32AD19DB700DD287F /* GalleryItemView.swift */; };
 		1380E5C62AD19E1A00DD287F /* Gallery.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1380E5C52AD19E1A00DD287F /* Gallery.xcassets */; };
 		13B3BAE42AC33A92005AA8E6 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B3BAE32AC33A92005AA8E6 /* NotificationManager.swift */; };
@@ -70,7 +69,6 @@
 		1351D6812AB5FFF30005440D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1351D6832AB5FFF50005440D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1351D6882AB5FFF50005440D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		135770222ACB07CE00615C66 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		1380E5C32AD19DB700DD287F /* GalleryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemView.swift; sourceTree = "<group>"; };
 		1380E5C52AD19E1A00DD287F /* Gallery.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Gallery.xcassets; sourceTree = "<group>"; };
 		13AA74002AC350AA008BAB6A /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
@@ -147,7 +145,6 @@
 				1351D67C2AB5FFF30005440D /* SceneDelegate.swift */,
 				13CC65242ABC874000C0D90A /* SettingsView.swift */,
 				13B3BAE32AC33A92005AA8E6 /* NotificationManager.swift */,
-				135770222ACB07CE00615C66 /* TutorialView.swift */,
 				1351D67E2AB5FFF30005440D /* ViewController.swift */,
 				1351D6832AB5FFF50005440D /* Assets.xcassets */,
 				1351D6802AB5FFF30005440D /* Main.storyboard */,
@@ -322,7 +319,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				13CF07182AD03D5A001459DE /* SettingsView.swift in Sources */,
-				135770232ACB07CE00615C66 /* TutorialView.swift in Sources */,
 				1380E5C42AD19DB700DD287F /* GalleryItemView.swift in Sources */,
 				13B3BAE42AC33A92005AA8E6 /* NotificationManager.swift in Sources */,
 				13BD53C72AB9D12800AF7808 /* widget.intentdefinition in Sources */,
@@ -508,7 +504,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.9.0;
+				MARKETING_VERSION = 0.9.2;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cranci.waifu2D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -546,7 +542,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.9.0;
+				MARKETING_VERSION = 0.9.2;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cranci.waifu2D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -37,15 +37,6 @@ struct SettingsView: View {
                 }
                 
                 
-                Section(header: Text("Tutorial"), footer: Text("If you want to learn how getures works.")) {
-                    Button("Show Tutorial") {
-                        isTutorialVisible.toggle()
-                    }
-                    .sheet(isPresented: $isTutorialVisible) {
-                        TutorialView(isPresented: $isTutorialVisible)
-                    }
-                }
-                
                 Section {
                     
                     HStack {
@@ -55,17 +46,6 @@ struct SettingsView: View {
                     .font(.system(size: 16, weight: .semibold))
                     .onTapGesture {
                         if let url = URL(string: "https://www.cranci.xyz/myWaifu2D/submit.html") {
-                            UIApplication.shared.open(url)
-                        }
-                    }
-                    
-                    HStack {
-                        Text("Submit waifu")
-                    }
-                    .foregroundColor(.gray)
-                    .font(.system(size: 16, weight: .semibold))
-                    .onTapGesture {
-                        if let url = URL(string: "mailto:cranci@null.net") {
                             UIApplication.shared.open(url)
                         }
                     }
