@@ -1,13 +1,18 @@
 import UIKit
 import SwiftUI
+import LocalAuthentication
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    var overlayView: UIView?
     
     
     @AppStorage("isHaptic2Enabled") private var isHaptic2Enabled = false
     @AppStorage("isButtonEnabled") private var isButtonEnabled = true
     @AppStorage("isGestureEnabled") private var isGestureEnabled = true
+    @AppStorage("isPasscodeEnabled") private var isPasscodeEnabled = false
 
+    
+    var isBiometricAuthenticated = false
     
     let textView = UITextView()
     let imageView = UIImageView()
@@ -173,8 +178,112 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         textView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16).isActive = true
         textView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.5).isActive = true
         textView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+     
+        if isPasscodeEnabled {
+        authenticate()
+        }
         
     }
+    
+    func authenticate() {
+            let context = LAContext()
+            var error: NSError?
+
+            // Check whether it's possible to use biometric authentication
+            if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+                // Biometric authentication is available, use it
+                showOverlay()
+
+                // Handle Face ID
+                context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "This is a security check reason.") { success, authenticationError in
+                    DispatchQueue.main.async {
+                        if success {
+                            // Update UI or perform any actions upon successful authentication
+                            print("Biometric authentication successful")
+                            self.isBiometricAuthenticated = true
+                            self.hideOverlay()
+                        } else {
+                            // Handle other authentication failures
+                            print("Biometric authentication failed: \(authenticationError?.localizedDescription ?? "Unknown error")")
+                            self.showAuthenticationError(withPasscodeFallback: true)
+                        }
+                    }
+                }
+            } else if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
+                // Biometric authentication is not available, prompt for passcode
+                showOverlay()
+
+                // Handle Touch ID
+                context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "This is a security check reason.") { success, authenticationError in
+                    DispatchQueue.main.async {
+                        if success {
+                            // Update UI or perform any actions upon successful authentication
+                            print("Biometric authentication (Touch ID) successful")
+                            self.isBiometricAuthenticated = true
+                            self.hideOverlay()
+                        } else {
+                            // Handle passcode authentication failure
+                            print("Passcode authentication failed: \(authenticationError?.localizedDescription ?? "Unknown error")")
+                            self.showAuthenticationError(withPasscodeFallback: true)
+                        }
+                    }
+                }
+            } else {
+                // Handle the case where biometrics are not available
+                print("Phone does not have biometrics")
+            }
+        }
+
+        func showOverlay() {
+            overlayView = UIView(frame: view.bounds)
+            overlayView?.backgroundColor = UIColor(white: 0, alpha: 1.0) // Fully opaque background
+            view.addSubview(overlayView!)
+        }
+
+        func hideOverlay() {
+            overlayView?.removeFromSuperview()
+        }
+
+    func showAuthenticationError(withPasscodeFallback: Bool) {
+            // Display a notification with an option to use passcode
+            let alertController = UIAlertController(title: "Authentication Failed", message: "Please re-authenticate.", preferredStyle: .alert)
+            
+            if withPasscodeFallback {
+                let passcodeAction = UIAlertAction(title: "Use Passcode", style: .default) { _ in
+                    self.showPasscodePrompt()
+                }
+                alertController.addAction(passcodeAction)
+            }
+            
+        let okAction = UIAlertAction(title: "OK", style: .destructive, handler: nil)
+            alertController.addAction(okAction)
+            
+            present(alertController, animated: true, completion: nil)
+        }
+
+        func showPasscodePrompt() {
+            let context = LAContext()
+            var error: NSError?
+
+            // Display the passcode entry prompt
+            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Please enter your passcode.") { success, authenticationError in
+                DispatchQueue.main.async {
+                    if success {
+                        // Passcode authentication successful
+                        print("Passcode authentication successful")
+                        self.isBiometricAuthenticated = true
+                        self.hideOverlay()
+                    } else {
+                        // Passcode authentication failed
+                        print("Passcode authentication failed: \(authenticationError?.localizedDescription ?? "Unknown error")")
+                        // Handle failure if needed
+                    }
+                }
+            }
+        }
+    
+    
+    
     
     @objc func chooseImage() {
            let imagePicker = UIImagePickerController()
@@ -270,7 +379,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let settingsView = SettingsView(
             isHaptic2Enabled: $isHaptic2Enabled,
             isGestureEnabled: $isGestureEnabled,
-            isButtonEnabled: $isButtonEnabled
+            isButtonEnabled: $isButtonEnabled,
+            isPasscodeEnabled: $isPasscodeEnabled
         )
 
         let settingsViewController = UIHostingController(rootView: settingsView)
@@ -330,4 +440,3 @@ extension ViewController: UITextViewDelegate {
         return true
     }
 }
-

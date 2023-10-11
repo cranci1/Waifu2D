@@ -7,6 +7,7 @@ struct SettingsView: View {
     @Binding var isHaptic2Enabled: Bool
     @Binding var isGestureEnabled: Bool
     @Binding var isButtonEnabled: Bool
+    @Binding var isPasscodeEnabled: Bool
     
     
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "N/A"
@@ -34,6 +35,13 @@ struct SettingsView: View {
                         Text("Use Gestures")
                     })
                     
+                }
+                
+                Section(header: Text("Security")) {
+                    
+                    Toggle(isOn: $isPasscodeEnabled, label: {
+                        Text("Biotmetric Authentication")
+                    })
                 }
                 
                 
@@ -78,7 +86,8 @@ struct SettingsView_Previews: PreviewProvider {
             
             isHaptic2Enabled: .constant(false),
             isGestureEnabled: .constant(true),
-            isButtonEnabled: .constant(true)
+            isButtonEnabled: .constant(true),
+            isPasscodeEnabled: .constant(false)
         )
             .preferredColorScheme(.dark)
     }

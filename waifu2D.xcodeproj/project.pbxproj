@@ -490,7 +490,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = waifu2D/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = myWaifu2D;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to use it to protect the app";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need permission to save photos to your library";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need to get access to your photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = Main;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -528,7 +530,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = waifu2D/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = myWaifu2D;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to use it to protect the app";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need permission to save photos to your library";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need to get access to your photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = Main;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
