@@ -3,7 +3,9 @@ import SwiftUI
 import LocalAuthentication
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     var overlayView: UIView?
+    var authenticationLabel: UILabel?
     
     
     @AppStorage("isHaptic2Enabled") private var isHaptic2Enabled = false
@@ -33,10 +35,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        let audioPlayerView = AudioPlayerView(frame: view.bounds)
-        view.addSubview(audioPlayerView)
         
         
         let tripleTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTripleTap))
@@ -234,10 +232,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
 
-        func showOverlay() {
+    func showOverlay() {
             overlayView = UIView(frame: view.bounds)
             overlayView?.backgroundColor = UIColor(white: 0, alpha: 1.0) // Fully opaque background
             view.addSubview(overlayView!)
+
+            // Add a lock/security icon
+            let lockIcon = UIImageView(image: UIImage(systemName: "lock.fill"))
+            lockIcon.tintColor = .white
+            lockIcon.frame = CGRect(x: (overlayView!.bounds.width - 30) / 2, y: 70, width: 30, height: 30)
+            overlayView?.addSubview(lockIcon)
+
+            // Add a UILabel for the authentication text
+            authenticationLabel = UILabel(frame: CGRect(x: 0, y: 85, width: overlayView!.bounds.width, height: 80)) // Increase the height for a larger label
+            authenticationLabel?.text = "Please Authenticate"
+            authenticationLabel?.textColor = .white
+            authenticationLabel?.textAlignment = .center
+            authenticationLabel?.font = UIFont.systemFont(ofSize: 24, weight: .bold) // Adjust the font size
+            overlayView?.addSubview(authenticationLabel!)
         }
 
         func hideOverlay() {
@@ -263,7 +275,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         func showPasscodePrompt() {
             let context = LAContext()
-            var error: NSError?
+            var _: NSError?
 
             // Display the passcode entry prompt
             context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Please enter your passcode.") { success, authenticationError in
@@ -281,8 +293,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 }
             }
         }
-    
-    
     
     
     @objc func chooseImage() {
@@ -312,6 +322,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
+    
+    
 
     
     @objc func handleSwipeTop(gesture: UISwipeGestureRecognizer) {

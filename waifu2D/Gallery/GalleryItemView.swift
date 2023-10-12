@@ -156,7 +156,7 @@ func downloadAndSaveImage(imageName: String) {
         return
     }
 
-    guard let data = image.pngData() else {
+    guard image.pngData() != nil else {
         print("Error getting PNG representation.")
         return
     }

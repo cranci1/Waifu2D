@@ -2,7 +2,6 @@ import SwiftUI
 
 struct SettingsView: View {
     @State private var isSettingsVisible = false
-    @State private var isTutorialVisible = false
     
     @Binding var isHaptic2Enabled: Bool
     @Binding var isGestureEnabled: Bool
@@ -24,7 +23,7 @@ struct SettingsView: View {
                 Section(header: Text("General"), footer: Text("The haptic feedback is the vibration when pressing a button.  If you enable/disable 'Use Buttons' you need to restart the app to see them.  Sound Effects plays when you tap the center of the screen.")) {
                     
                     Toggle(isOn: $isHaptic2Enabled, label: {
-                        Text("Haptic feedback for all buttons")
+                        Text("Haptic Feedback")
                     })
                 
                     Toggle(isOn: $isButtonEnabled, label: {
@@ -37,7 +36,7 @@ struct SettingsView: View {
                     
                 }
                 
-                Section(header: Text("Security")) {
+                Section(header: Text("Security"), footer: Text("If no Biometric Authentication is enabled on the device the passcode will be asked.")) {
                     
                     Toggle(isOn: $isPasscodeEnabled, label: {
                         Text("Biotmetric Authentication")
@@ -48,16 +47,16 @@ struct SettingsView: View {
                 Section {
                     
                     HStack {
-                        Text("Submition form")
+                        Text("Submit Waifu")
                     }
-                    .foregroundColor(.gray)
-                    .font(.system(size: 16, weight: .semibold))
+                    .font(.system(size: 15, weight: .regular))
                     .onTapGesture {
-                        if let url = URL(string: "https://www.cranci.xyz/myWaifu2D/submit.html") {
+                        if let url = URL(string: "https://cranci1.github.io/myWaifu2D/submit.html") {
                             UIApplication.shared.open(url)
                         }
                     }
                 }
+                
                 
                 Section(header: Text("App Info")) {
                         HStack {

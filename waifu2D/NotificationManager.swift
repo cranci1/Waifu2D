@@ -10,21 +10,21 @@ class NotificationManager {
     private var notificationTimer: Timer?
 
     func scheduleNotifications() {
-            let center = UNUserNotificationCenter.current()
-            center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-                if granted {
-                    // Schedule notifications immediately
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            if granted {
+                // Schedule notifications immediately
+                self.scheduleRecurringNotifications()
+                
+                // Schedule recurring timer for future notifications
+                self.notificationTimer = Timer.scheduledTimer(withTimeInterval: 18000, repeats: true) { _ in
                     self.scheduleRecurringNotifications()
-                    
-                    // Schedule recurring timer for future notifications
-                    self.notificationTimer = Timer.scheduledTimer(withTimeInterval: 18000, repeats: true) { _ in
-                        self.scheduleRecurringNotifications()
-                    }
-                } else {
-                    print("Notification permission denied.")
                 }
+            } else {
+                print("Notification permission denied.")
             }
         }
+    }
 
     private func scheduleRecurringNotifications() {
         let content = UNMutableNotificationContent()
@@ -57,13 +57,15 @@ class NotificationManager {
         }
 
         let notificationInterval: TimeInterval = 18000
-        var delay: TimeInterval = 18000
+                var delay: TimeInterval = 18000
 
         for _ in 1...10 {
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: false)
             content.title = "Sweet Missings 💕"
             content.body = getRandomText()
-            content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "moan1.ogg"))
+            
+            // Set the sound file with the correct format and name using the `.named` initializer
+            content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "tuturu.wav"))
 
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request) { (error) in
@@ -74,10 +76,5 @@ class NotificationManager {
 
             delay += notificationInterval
         }
-    }
-
-    deinit {
-        // Invalidate the timer when the manager is deallocated
-        notificationTimer?.invalidate()
     }
 }
