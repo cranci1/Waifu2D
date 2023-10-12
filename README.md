@@ -1,15 +1,9 @@
 # myWaifu2D
-simple swift app that display an anime girl + some texts under it. Thanks chatgpt
+simple swift app that display an image + some texts under it.
 
-## UI:
-<img src="icon-new/ui3.png" alt="UI" />
-
-Remember that the UI may change during time ( already changed [ too lazy to change all the times lol ] )
-
----
 ## USAGE:
 
-#### IMPORTANT: IF YOU DISABLE BOTH "USE BUTTONS" AND "USE GESTURES" YOU DONT NEED TO RE-INSTALL THE APP. JUST TOUCH QUICKLY 3 TIMES ON THE SCREEN AND THE SETTINGS PAGE WILL POP UP
+## IMPORTANT: IF YOU DISABLE BOTH "USE BUTTONS" AND "USE GESTURES" YOU DONT NEED TO RE-INSTALL THE APP. JUST TOUCH QUICKLY 3 TIMES ON THE SCREEN AND THE SETTINGS PAGE WILL POP UP
 
 GESTURES:
 
@@ -22,13 +16,13 @@ GESTURES:
 
 ## INSTALLATION:
 
-To install the app, you need to get the .ipa file from the Release page ( latest build is recommended) and then use trollstore, sideloadly, altstore or any other program to install .ipa files.
+To install the app, you need to get the .ipa file from the Release page ( latest build is recommended or you can download the dev build inside the /ipa folder on the src ) and then use trollstore, sideloadly, altstore, scarlet or any other program to install .ipa files.
 
 ---
 ## Things to add:
 
-- custom display image/images
-- custom display text
+- ~~custom display image/images~~
+- ~~custom display text~~ (kinda maybe ill make it better)
 - ~~a menu to manage some stuffs (kinda done have to make it works)~~
 - ~~widget with a display image~~
 
