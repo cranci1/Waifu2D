@@ -327,7 +327,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     
     @objc func handleSwipeTop(gesture: UISwipeGestureRecognizer) {
-            if isGestureEnabled {
+            if isGestureEnabled && isBiometricAuthenticated {
                if gesture.direction == .up {
                    showColourPicker((Any).self)
                }
@@ -335,7 +335,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
         @objc func handleSwipeDown(gesture: UISwipeGestureRecognizer) {
-            if isGestureEnabled {
+            if isGestureEnabled && isBiometricAuthenticated {
                 if gesture.direction == .down {
                     showSettings()
                 }
@@ -343,7 +343,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     
     @objc func handleSwipeRight(gesture: UISwipeGestureRecognizer) {
-        if isGestureEnabled {
+        if isGestureEnabled && isBiometricAuthenticated {
             if gesture.direction == .right {
                 chooseImage()
             }
@@ -351,7 +351,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
      }
     
     @objc func handleSwipeLeft(gesture: UISwipeGestureRecognizer) {
-        if isGestureEnabled {
+        if isGestureEnabled && isBiometricAuthenticated {
             if gesture.direction == .left {
                 showGallery()
             }
@@ -360,8 +360,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
         @objc func handleTripleTap() {
+            if isBiometricAuthenticated {
                 showSettings()
             }
+        }
     
     
     @objc func showGallery() {
