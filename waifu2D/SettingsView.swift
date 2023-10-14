@@ -20,7 +20,7 @@ struct SettingsView: View {
             .hidden()
             
             Form {
-                Section(header: Text("General"), footer: Text("The haptic feedback is the vibration when pressing a button.  If you enable/disable 'Use Buttons' you need to restart the app to see them.  Sound Effects plays when you tap the center of the screen.")) {
+                Section(header: Text("General"), footer: Text("If you enable/disable 'Use Buttons' you need to restart the app to see them.")) {
                     
                     Toggle(isOn: $isHaptic2Enabled, label: {
                         Text("Haptic Feedback")

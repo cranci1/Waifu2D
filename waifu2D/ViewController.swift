@@ -61,7 +61,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                       
         
                     
-        // Load the previously selected color (if any)
     if let savedColorData = UserDefaults.standard.data(forKey: "selectedColor"),
         let savedColor = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedColorData) as? UIColor {
         self.view.backgroundColor = savedColor
@@ -141,21 +140,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                   imageView.image = selectedImage
               }
         
-        // Set up image view
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         
-        // Add subviews
+
         view.addSubview(imageView)
         
-        // Layout constraints
+
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.8).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.6).isActive = true
+        
+        
 
-        // Load the previously selected color (if any)
     if let savedColorData = UserDefaults.standard.data(forKey: "selectedColor"),
         let savedColor = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedColorData) as? UIColor {
         self.view.backgroundColor = savedColor
@@ -167,10 +166,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         textView.textAlignment = .center
         textView.delegate = self
 
-        // Add subviews
         view.addSubview(textView)
 
-        // Layout constraints
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         textView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16).isActive = true
@@ -179,6 +176,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
      
         if isPasscodeEnabled {
         authenticate()
+        }
+        
+        if !isPasscodeEnabled {
+            isBiometricAuthenticated = true
         }
         
     }
@@ -234,21 +235,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     func showOverlay() {
             overlayView = UIView(frame: view.bounds)
-            overlayView?.backgroundColor = UIColor(white: 0, alpha: 1.0) // Fully opaque background
+            overlayView?.backgroundColor = UIColor(white: 0, alpha: 1.0)
             view.addSubview(overlayView!)
 
-            // Add a lock/security icon
+            
             let lockIcon = UIImageView(image: UIImage(systemName: "lock.fill"))
             lockIcon.tintColor = .white
             lockIcon.frame = CGRect(x: (overlayView!.bounds.width - 30) / 2, y: 70, width: 30, height: 30)
             overlayView?.addSubview(lockIcon)
 
-            // Add a UILabel for the authentication text
-            authenticationLabel = UILabel(frame: CGRect(x: 0, y: 85, width: overlayView!.bounds.width, height: 80)) // Increase the height for a larger label
+            
+            authenticationLabel = UILabel(frame: CGRect(x: 0, y: 85, width: overlayView!.bounds.width, height: 80))
             authenticationLabel?.text = "Please Authenticate"
             authenticationLabel?.textColor = .white
             authenticationLabel?.textAlignment = .center
-            authenticationLabel?.font = UIFont.systemFont(ofSize: 24, weight: .bold) // Adjust the font size
+            authenticationLabel?.font = UIFont.systemFont(ofSize: 24, weight: .bold)
             overlayView?.addSubview(authenticationLabel!)
         }
 
@@ -257,7 +258,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
 
     func showAuthenticationError(withPasscodeFallback: Bool) {
-            // Display a notification with an option to use passcode
             let alertController = UIAlertController(title: "Authentication Failed", message: "Please re-authenticate.", preferredStyle: .alert)
             
             if withPasscodeFallback {
@@ -311,7 +311,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
            if let selectedImage = info[.originalImage] as? UIImage {
                imageView.image = selectedImage
                
-               // Save the selected image as PNG data to UserDefaults
                if let imageData = selectedImage.pngData() {
                    UserDefaults.standard.set(imageData, forKey: "selectedImageData")
                }
@@ -367,20 +366,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     @objc func showGallery() {
-            // Pass your image data to the GalleryView
             let galleryView = GalleryView(images: [
+                
                 ImageInfo(name: "Luna Shirakawa", author: "@kimizero_anime", imageName: "luna"),
                 ImageInfo(name: "Mai Sakurajima", author: "@aobuta_anime", imageName: "mai"),
                 ImageInfo(name: "Mai Sakurajima bunny ears", author: "@aobuta_anime", imageName: "mai-bunny-half"),
                 ImageInfo(name: "Mai Sakurajima bunny", author: "@aobuta_anime", imageName: "mai-bunny"),
                 ImageInfo(name: "Asuna Yuuki", author: "@sao_anime", imageName: "asuna"),
-                ImageInfo(name: "Aqua", author: "@konosubaanime", imageName: "aqua"),
+                ImageInfo(name: "Aqua", author: "@konosubaanime", imageName: "aqua")
+                
             ])
 
-            // Wrap the SwiftUI view in a UIHostingController
+            
             let hostingController = UIHostingController(rootView: galleryView)
 
-            // Present the hostingController
             present(hostingController, animated: true, completion: nil)
         
         if isHaptic2Enabled {
@@ -429,12 +428,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
       func colorPickerViewControllerDidSelectColor(_ viewController: UIColorPickerViewController) {
           let selectedColor = viewController.selectedColor
           
-          // Save the selected color to UserDefaults
+          
           if let colorData = try? NSKeyedArchiver.archivedData(withRootObject: selectedColor, requiringSecureCoding: false) {
               UserDefaults.standard.set(colorData, forKey: "selectedColor")
           }
           
-          // Update the background color of the main view
+        
           self.view.backgroundColor = selectedColor
       }
 }
@@ -442,13 +441,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
 extension ViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        // Save the entered text to UserDefaults
+        
         UserDefaults.standard.set(textView.text, forKey: "enteredText")
     }
 
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
-            textView.resignFirstResponder() // Dismiss the keyboard on return key
+            textView.resignFirstResponder() 
             return false
         }
         return true
