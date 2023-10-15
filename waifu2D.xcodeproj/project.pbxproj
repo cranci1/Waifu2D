@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		131A9BDE2AD81B1B006DE6DA /* tuturu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 131A9BDD2AD81B1B006DE6DA /* tuturu.wav */; };
+		1331E3552ADC0135002E20F1 /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1331E3542ADC0135002E20F1 /* widget.swift */; };
 		1351D67B2AB5FFF30005440D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351D67A2AB5FFF30005440D /* AppDelegate.swift */; };
 		1351D67D2AB5FFF30005440D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351D67C2AB5FFF30005440D /* SceneDelegate.swift */; };
 		1351D67F2AB5FFF30005440D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1351D67E2AB5FFF30005440D /* ViewController.swift */; };
@@ -18,7 +19,6 @@
 		13B3BAE42AC33A92005AA8E6 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B3BAE32AC33A92005AA8E6 /* NotificationManager.swift */; };
 		13BD53BD2AB9D12600AF7808 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BD53A42AB9C83700AF7808 /* WidgetKit.framework */; };
 		13BD53BE2AB9D12600AF7808 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BD53A62AB9C83700AF7808 /* SwiftUI.framework */; };
-		13BD53C12AB9D12600AF7808 /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BD53C02AB9D12600AF7808 /* widget.swift */; };
 		13BD53C42AB9D12800AF7808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13BD53C32AB9D12800AF7808 /* Assets.xcassets */; };
 		13BD53C62AB9D12800AF7808 /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 13BD53C22AB9D12600AF7808 /* widget.intentdefinition */; };
 		13BD53C72AB9D12800AF7808 /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 13BD53C22AB9D12600AF7808 /* widget.intentdefinition */; };
@@ -37,6 +37,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		1331E2D02ADBFB72002E20F1 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		13BD53B42AB9C83900AF7808 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -52,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		131A9BDD2AD81B1B006DE6DA /* tuturu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tuturu.wav; sourceTree = "<group>"; };
+		1331E3542ADC0135002E20F1 /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
 		133EFA4D2ABB0D56004E32EC /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
 		1351D6772AB5FFF30005440D /* waifu2D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = waifu2D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1351D67A2AB5FFF30005440D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +79,6 @@
 		13BD53A42AB9C83700AF7808 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		13BD53A62AB9C83700AF7808 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		13BD53BC2AB9D12600AF7808 /* widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		13BD53C02AB9D12600AF7808 /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
 		13BD53C22AB9D12600AF7808 /* widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = widget.intentdefinition; sourceTree = "<group>"; };
 		13BD53C32AB9D12800AF7808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13BD53C52AB9D12800AF7808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,7 +174,7 @@
 		13BD53BF2AB9D12600AF7808 /* widget */ = {
 			isa = PBXGroup;
 			children = (
-				13BD53C02AB9D12600AF7808 /* widget.swift */,
+				1331E3542ADC0135002E20F1 /* widget.swift */,
 				13BD53C22AB9D12600AF7808 /* widget.intentdefinition */,
 				13BD53C32AB9D12800AF7808 /* Assets.xcassets */,
 				13BD53C52AB9D12800AF7808 /* Info.plist */,
@@ -183,6 +193,7 @@
 				1351D6742AB5FFF30005440D /* Frameworks */,
 				1351D6752AB5FFF30005440D /* Resources */,
 				13BD53B42AB9C83900AF7808 /* Embed App Extensions */,
+				1331E2D02ADBFB72002E20F1 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
@@ -294,7 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13BD53C62AB9D12800AF7808 /* widget.intentdefinition in Sources */,
-				13BD53C12AB9D12600AF7808 /* widget.swift in Sources */,
+				1331E3552ADC0135002E20F1 /* widget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,7 +480,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.9.3;
+				MARKETING_VERSION = 0.9.4;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cranci.waifu2D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -510,7 +521,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.9.3;
+				MARKETING_VERSION = 0.9.4;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cranci.waifu2D;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -539,7 +550,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.9.3;
+				MARKETING_VERSION = 0.9.4;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cranci.waifu2D.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -567,7 +578,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.9.3;
+				MARKETING_VERSION = 0.9.4;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cranci.waifu2D.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

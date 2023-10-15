@@ -1,3 +1,10 @@
+//
+//  AppDelegate.swift
+//  waifu2D
+//
+//  Created by Francesco on 16/09/23.
+//
+
 import UIKit
 import UserNotifications
 import Photos

@@ -1,3 +1,11 @@
+//
+//  ViewController.swift
+//  waifu2D
+//
+//  Created by Francesco on 16/09/23.
+//
+
+
 import UIKit
 import SwiftUI
 import LocalAuthentication
@@ -79,7 +87,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
 
             let showSettingsButton = UIButton(type: .system)
-            let showSettingsConfig = UIImage.SymbolConfiguration(pointSize: 25)
+            let showSettingsConfig = UIImage.SymbolConfiguration(pointSize: 20)
             let showSettingsIcon = UIImage(systemName: "gear", withConfiguration: showSettingsConfig)
             showSettingsButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
                                    return traitCollection.userInterfaceStyle == .light ? .black : .white
