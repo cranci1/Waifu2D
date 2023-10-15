@@ -90,7 +90,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
 
             let showSettingsButton = UIButton(type: .system)
-            let showSettingsConfig = UIImage.SymbolConfiguration(pointSize: 20)
+            let showSettingsConfig = UIImage.SymbolConfiguration(pointSize: 25)
             let showSettingsIcon = UIImage(systemName: "gear", withConfiguration: showSettingsConfig)
             showSettingsButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
                                    return traitCollection.userInterfaceStyle == .light ? .black : .white
