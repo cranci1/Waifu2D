@@ -21,17 +21,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     let feedbackGenerator = UISelectionFeedbackGenerator()
     
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
-    }
-    
-    override var shouldAutorotate: Bool {
-        return true
-    }
-    
-    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-        return .portrait
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
