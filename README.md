@@ -3,6 +3,8 @@ simple swift app that display an image + some texts under it.
 
 Android version: [here](https://github.com/cranci1/waifu2D-android)
 
+---
+
 ## USAGE:
 
 IMPORTANT: IF YOU DISABLE BOTH "USE BUTTONS" AND "USE GESTURES" YOU DONT NEED TO RE-INSTALL THE APP. JUST TOUCH QUICKLY 3 TIMES ON THE SCREEN AND THE SETTINGS PAGE WILL POP UP
