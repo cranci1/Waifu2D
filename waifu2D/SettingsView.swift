@@ -64,7 +64,8 @@ struct SettingsView: View {
                 })
             }
             
-            Section {
+            
+            Section(header: Text("Submition")) {
                 HStack {
                     Text("Submit Waifu")
                 }
@@ -74,6 +75,30 @@ struct SettingsView: View {
                         UIApplication.shared.open(url)
                     }
                 }
+            }
+            
+            
+            Section(header: Text("Support"), footer: Text("Every amount of money is appreciated.") ) {
+                HStack {
+                    Text("Ko-fi")
+                }
+                .font(.system(size: 15, weight: .regular))
+                .onTapGesture {
+                    if let url = URL(string: "https://ko-fi.com/cranci") {
+                        UIApplication.shared.open(url)
+                    }
+                }
+                
+                HStack {
+                    Text("PayPal")
+                }
+                .font(.system(size: 15, weight: .regular))
+                .onTapGesture {
+                    if let url = URL(string: "https://paypal.me/Cranci22") {
+                        UIApplication.shared.open(url)
+                    }
+                }
+                
             }
             
             Section(header: Text("App Info")) {
