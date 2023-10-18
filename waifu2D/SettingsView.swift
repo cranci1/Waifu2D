@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     @State private var isSettingsVisible = false
     
+    
     @Binding var isHaptic2Enabled: Bool
     @Binding var isGestureEnabled: Bool
     @Binding var isButtonEnabled: Bool
@@ -41,10 +42,12 @@ struct SettingsView: View {
         }
         #endif
     }
+
     
     var content: some View {
         Form {
-            Section(header: Text("General"), footer: Text("If you enable/disable 'Use Buttons' you need to restart the app to see them.")) {
+            Section(header: Text("General"), footer: Text("If you enable/disable 'Use Buttons' you need to restart the app to see/unsee them.")) {
+                
                 Toggle(isOn: $isHaptic2Enabled, label: {
                     Text("Vibration Feedback")
                 })
@@ -56,42 +59,67 @@ struct SettingsView: View {
                 Toggle(isOn: $isGestureEnabled, label: {
                     Text("Use Gestures")
                 })
+                
             }
             
             Section(header: Text("Security"), footer: Text("If no Biometric Authentication is enabled on the device the passcode will be asked.")) {
+                
                 Toggle(isOn: $isPasscodeEnabled, label: {
                     Text("Biometric Authentication")
                 })
+                
             }
             
-            
-            Section(header: Text("Submition")) {
+            Section(header: Text("Submition"), footer: Text("The button will redirect to a link.") ) {
                 HStack {
                     Text("Submit Waifu")
                 }
                 .font(.system(size: 15, weight: .regular))
                 .onTapGesture {
-                    if let url = URL(string: "https://cranci1.github.io/myWaifu2D/submit.html") {
+                    if let url = URL(string: "https://waifu2d.cranci.xyz/submit.html") {
+                        UIApplication.shared.open(url)
+                    }
+                }
+            }
+            
+            Section(header: Text("About")) {
+                
+                HStack {
+                    Text("Version: \(appVersion)")
+                }
+                
+                HStack {
+                    Text("Build: \(appBuild)")
+                }
+                
+                HStack {
+                    Image("github")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 20, height: 20)
+                    
+                    Text("Github repo")
+                }
+                .font(.system(size: 15, weight: .regular))
+                .onTapGesture {
+                    if let url = URL(string: "https://github.com/cranci1/waifu2D/") {
                         UIApplication.shared.open(url)
                     }
                 }
             }
             
             
-            Section(header: Text("Support"), footer: Text("Every amount of money is appreciated.") ) {
-                HStack {
-                    Text("Ko-fi")
-                }
-                .font(.system(size: 15, weight: .regular))
-                .onTapGesture {
-                    if let url = URL(string: "https://ko-fi.com/cranci") {
-                        UIApplication.shared.open(url)
-                    }
-                }
+            Section(header: Text("Support Me"), footer: Text("Every amount of money is appreciated.") ) {
                 
                 HStack {
+                    Image("paypal")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 20, height: 20)
+                    
                     Text("PayPal")
                 }
+                .foregroundColor(.blue)
                 .font(.system(size: 15, weight: .regular))
                 .onTapGesture {
                     if let url = URL(string: "https://paypal.me/Cranci22") {
@@ -99,15 +127,23 @@ struct SettingsView: View {
                     }
                 }
                 
-            }
-            
-            Section(header: Text("App Info")) {
                 HStack {
-                    Text("Version: \(appVersion)")
+                    Image("ko-fi")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 30, height: 30)
+                    
+                    Text("Ko-fi")
                 }
-                HStack {
-                    Text("Build: \(appBuild)")
+                .foregroundColor(.red)
+                .font(.system(size: 15, weight: .regular))
+                .onTapGesture {
+                    if let url = URL(string: "https://ko-fi.com/cranci") {
+                        UIApplication.shared.open(url)
+                    }
                 }
+                    
+                
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -118,8 +154,9 @@ struct SettingsView: View {
         Form {
             Section {
                 NavigationLink(destination: EmptyView()) {
-                    Text("Placeholder for Settings")
+                    Text("Settings")
                 }
+                
             }
         }
         .navigationBarTitle("Settings")
