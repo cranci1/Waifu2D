@@ -37,8 +37,8 @@ struct CustomWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             CustomWidgetView(imageName: entry.imageName)
         }
-        .configurationDisplayName("myWaifu2D's Widget")
-        .description("")
+        .configurationDisplayName("myWaifu2D")
+        .description("Some Widgets")
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge])
     }
 }
