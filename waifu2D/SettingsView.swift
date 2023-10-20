@@ -62,7 +62,7 @@ struct SettingsView: View {
                 
             }
             
-            Section(header: Text("Security"), footer: Text("If no Biometric Authentication is enabled on the device the passcode will be asked.")) {
+            Section(header: Text("Security"), footer: Text("If no Biometric Authentication is enabled on the device the passcode will be asked. The tweak 'FakePass' wont work.")) {
                 
                 Toggle(isOn: $isPasscodeEnabled, label: {
                     Text("Biometric Authentication")
