@@ -102,8 +102,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
 
             let chooseImageButton = UIButton(type: .system)
-            let chooseImageConfig = UIImage.SymbolConfiguration(pointSize: 25)
-            let chooseImageIcon = UIImage(systemName: "photo.circle", withConfiguration: chooseImageConfig)
+            let chooseImageConfig = UIImage.SymbolConfiguration(pointSize: 20)
+            let chooseImageIcon = UIImage(systemName: "photo.on.rectangle", withConfiguration: chooseImageConfig)
             chooseImageButton.setImage(chooseImageIcon, for: .normal)
             chooseImageButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
                 return traitCollection.userInterfaceStyle == .light ? .black : .white
@@ -117,7 +117,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             let showGalleryButton = UIButton(type: .system)
             let showGalleryConfig = UIImage.SymbolConfiguration(pointSize: 20)
-            let showGalleryIcon = UIImage(systemName: "photo.on.rectangle", withConfiguration: showGalleryConfig)
+            let showGalleryIcon = UIImage(systemName: "photo.on.rectangle.angled", withConfiguration: showGalleryConfig)
             showGalleryButton.setImage(showGalleryIcon, for: .normal)
             showGalleryButton.tintColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
                 return traitCollection.userInterfaceStyle == .light ? .black : .white
@@ -300,9 +300,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if isHaptic2Enabled {
                 feedbackGenerator.selectionChanged()
-        }
+     }
         
-       }
+  }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
            if let selectedImage = info[.originalImage] as? UIImage {

@@ -37,9 +37,18 @@ struct CustomWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             CustomWidgetView(imageName: entry.imageName)
         }
-        .configurationDisplayName("myWaifu2D")
-        .description("Some Widgets")
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge])
+        .configurationDisplayName("myWaifu2D's Widget")
+        .description("Some Insane widgets")
+        .supportedFamilies(supportedWidgetFamilies())
+    }
+    
+    // Conditionally determine supported families based on the iOS version
+    private func supportedWidgetFamilies() -> [WidgetFamily] {
+        if #available(iOS 15, *) {
+            return [.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge]
+        } else {
+            return [.systemSmall, .systemMedium]
+        }
     }
 }
 
