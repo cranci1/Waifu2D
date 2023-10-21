@@ -1,7 +1,7 @@
 # myWaifu2D
 simple swift app that display an image + some texts under it.
 
-Require iOS 14+ ( i think i'll add lower iOS support soon ) ( haven't tested iOS 14 on a simulator doing it soon )
+Require iOS 14+ ( Don't think i'll be able to go under ios 14 )
 
 Android version: [here](https://github.com/cranci1/waifu2D-android)
 

@@ -122,7 +122,7 @@ struct SettingsView: View {
                 .foregroundColor(.blue)
                 .font(.system(size: 15, weight: .regular))
                 .onTapGesture {
-                    if let url = URL(string: "https://paypal.me/Cranci22") {
+                    if let url = URL(string: "https://paypal.me/cranci1") {
                         UIApplication.shared.open(url)
                     }
                 }
