@@ -1,7 +1,7 @@
 # myWaifu2D
 simple swift app that display an image + some texts under it.
 
-Require iOS 14+ ( i think i'll add lower iOS support soon )
+Require iOS 14+ ( i think i'll add lower iOS support soon ) ( haven't tested iOS 14 on a simulator doing it soon )
 
 Android version: [here](https://github.com/cranci1/waifu2D-android)
 
@@ -25,7 +25,7 @@ GESTURES:
 To install the app, you need to get the .ipa file from the Release page ( latest build is recommended or you can download the dev build inside the /ipa folder on the src ) and then use trollstore, sideloadly, altstore, scarlet or any other program to install .ipa files.
 
 ---
-## Things to add:
+## ~~Things to add:~~  Maybe I'll add something
 
 - ~~custom display image/images~~
 - ~~custom display text (kinda maybe ill make it better)~~ 
