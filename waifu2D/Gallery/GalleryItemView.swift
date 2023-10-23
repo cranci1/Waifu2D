@@ -14,9 +14,9 @@ struct GalleryItemView: View {
 
     var body: some View {
             VStack(alignment: .leading) {
-                // Check if the image can be loaded
+                
                 if let uiImage = UIImage(named: image.imageName) {
-                    Image(uiImage: uiImage) // Use Image(uiImage:) initializer to load UIImage
+                    Image(uiImage: uiImage)
                         .resizable()
                         .scaledToFit()
                         .frame(height: isExpanded ? UIScreen.main.bounds.height / 2 : 200)
@@ -173,6 +173,8 @@ struct ContentView: View {
         ImageInfo(name: "Mai Sakurajima bunny", author: "@aobuta_anime", imageName: "mai-bunny"),
         ImageInfo(name: "Asuna Yuuki", author: "@sao_anime", imageName: "asuna"),
         ImageInfo(name: "Aqua", author: "@konosubaanime", imageName: "aqua"),
+        ImageInfo(name: "Sumi Sakurasawa", author: "@kanokari_anime", imageName: "sumi"),
+        ImageInfo(name: "Shizuka Mikazuki", author: "@Zom100_anime_JP", imageName: "Shizuka")
     ]
 
     var body: some View {

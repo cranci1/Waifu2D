@@ -225,8 +225,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     }
                 }
             } else {
-                // Handle the case where biometrics are not available
                 print("Phone does not have biometrics")
+                self.showPasscodePrompt()
             }
         }
 
@@ -370,7 +370,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 ImageInfo(name: "Mai Sakurajima bunny ears", author: "@aobuta_anime", imageName: "mai-bunny-half"),
                 ImageInfo(name: "Mai Sakurajima bunny", author: "@aobuta_anime", imageName: "mai-bunny"),
                 ImageInfo(name: "Asuna Yuuki", author: "@sao_anime", imageName: "asuna"),
-                ImageInfo(name: "Aqua", author: "@konosubaanime", imageName: "aqua")
+                ImageInfo(name: "Aqua", author: "@konosubaanime", imageName: "aqua"),
+                ImageInfo(name: "Sumi Sakurasawa", author: "@kanokari_anime", imageName: "sumi"),
+                ImageInfo(name: "Shizuka Mikazuki", author: "@Zom100_anime_JP", imageName: "Shizuka")
                 
             ])
 
@@ -410,7 +412,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     if isHaptic2Enabled {
             feedbackGenerator.selectionChanged()
     }
-    
   }
 
     
