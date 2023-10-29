@@ -12,60 +12,75 @@ struct GalleryItemView: View {
 
     var image: ImageInfo
     @State private var isExpanded = false
+    @State private var showAlert = false
 
     var body: some View {
-            VStack(alignment: .leading) {
-                
-                if let uiImage = UIImage(named: image.imageName) {
-                    Image(uiImage: uiImage)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: isExpanded ? UIScreen.main.bounds.height / 2 : 200)
-                        .cornerRadius(20)
-                        .onTapGesture {
-                            withAnimation {
-                                isExpanded.toggle()
-                            }
+        VStack(alignment: .leading) {
+            if let uiImage = UIImage(named: image.imageName) {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: isExpanded ? UIScreen.main.bounds.height / 2 : 200)
+                    .cornerRadius(20)
+                    .onTapGesture {
+                        withAnimation {
+                            isExpanded.toggle()
                         }
-                } else {
-                    Text("Image not found: \(image.imageName)")
-                        .foregroundColor(.red)
-                }
+                    }
+            } else {
+                Text("Image not found: \(image.imageName)")
+                    .foregroundColor(.red)
+            }
 
-                Rectangle()
-                    .fill(Color.primaryBackground)
-                    .frame(height: isExpanded ? 50 : 30)
-                    .overlay(
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text("\(image.name)")
-                                Text("\(image.author)")
-                            }
-                            .foregroundColor(Color.secondaryText)
-
-                            Spacer()
-
-                            Button(action: {
-                                downloadAndSaveImage(image: image)
-                            }) {
-                                Image(systemName: "arrow.down.circle")
-                                    .foregroundColor(.white)
-                            }
+            Rectangle()
+                .fill(Color.primaryBackground)
+                .frame(height: isExpanded ? 50 : 30)
+                .overlay(
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("\(image.name)")
+                            Text("\(image.author)")
                         }
-                        .padding()
-                    )
-            }
-            .padding()
-            .background(RoundedRectangle(cornerRadius: 10).fill(Color.primaryBackground))
-            .cornerRadius(10)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(colorScheme == .dark ? Color.black : Color.gray, lineWidth: 2)
-            )
-            .fullScreenCover(isPresented: $isExpanded) {
-                ExpandedGalleryItemView(image: image, isExpanded: $isExpanded)
-            }
+                        .foregroundColor(Color.secondaryText)
+
+                        Spacer()
+
+                        Button(action: {
+                            showAlert.toggle()
+                        }) {
+                            Image(systemName: "arrow.down.circle")
+                                .foregroundColor(.white)
+                        }
+                        .alert(isPresented: $showAlert) {
+                            Alert(
+                                title: Text("Redirect Link"),
+                                message: Text("If you press the 'Ok' button youu will be redirected to a site with the selected image. Just save the image in the gallery."),
+                                primaryButton: .default(
+                                    Text("Ok"),
+                                    action: {
+                                        downloadAndSaveImage(image: image)
+                                    }
+                                ),
+                                secondaryButton: .destructive(
+                                    Text("Cancel")
+                                )
+                            )
+                        }
+                    }
+                    .padding()
+                )
         }
+        .padding()
+        .background(RoundedRectangle(cornerRadius: 10).fill(Color.primaryBackground))
+        .cornerRadius(10)
+        .overlay(
+            RoundedRectangle(cornerRadius: 5)
+                .stroke(colorScheme == .dark ? Color.black : Color.gray, lineWidth: 2)
+        )
+        .fullScreenCover(isPresented: $isExpanded) {
+            ExpandedGalleryItemView(image: image, isExpanded: $isExpanded)
+        }
+    }
 }
 
 struct GalleryView: View {
@@ -161,6 +176,7 @@ func downloadAndSaveImage(image: ImageInfo) {
         print("Error: Web URL not found for image: \(image.imageName)")
     }
 }
+
 
 struct ContentView: View {
     let galleryImages: [ImageInfo] = [
