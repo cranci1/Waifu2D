@@ -365,14 +365,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @objc func showGallery() {
             let galleryView = GalleryView(images: [
                 
-                ImageInfo(name: "Luna Shirakawa", author: "@kimizero_anime", imageName: "luna"),
-                ImageInfo(name: "Mai Sakurajima", author: "@aobuta_anime", imageName: "mai"),
-                ImageInfo(name: "Mai Sakurajima bunny ears", author: "@aobuta_anime", imageName: "mai-bunny-half"),
-                ImageInfo(name: "Mai Sakurajima bunny", author: "@aobuta_anime", imageName: "mai-bunny"),
-                ImageInfo(name: "Asuna Yuuki", author: "@sao_anime", imageName: "asuna"),
-                ImageInfo(name: "Aqua", author: "@konosubaanime", imageName: "aqua"),
-                ImageInfo(name: "Sumi Sakurasawa", author: "@kanokari_anime", imageName: "sumi"),
-                ImageInfo(name: "Shizuka Mikazuki", author: "@Zom100_anime_JP", imageName: "Shizuka")
+                ImageInfo(name: "Luna Shirakawa", author: "@kimizero_anime", imageName: "luna", webURL: "https://raw.githubusercontent.com/cranci1/waifu2D/main/waifu2D/Gallery/Gallery.xcassets/luna.imageset/luna.png"),
+                ImageInfo(name: "Mai Sakurajima", author: "@aobuta_anime", imageName: "mai", webURL: "https://raw.githubusercontent.com/cranci1/waifu2D/main/waifu2D/Gallery/Gallery.xcassets/mai.imageset/mai.png"),
+                ImageInfo(name: "Mai Sakurajima bunny ears", author: "@aobuta_anime", imageName: "mai-bunny-half", webURL: "https://raw.githubusercontent.com/cranci1/waifu2D/main/waifu2D/Gallery/Gallery.xcassets/mai-bunny-half.imageset/semi.png"),
+                ImageInfo(name: "Mai Sakurajima bunny", author: "@aobuta_anime", imageName: "mai-bunny", webURL: "https://raw.githubusercontent.com/cranci1/waifu2D/main/waifu2D/Gallery/Gallery.xcassets/mai-bunny.imageset/bunny.png"),
+                ImageInfo(name: "Asuna Yuuki", author: "@sao_anime", imageName: "asuna", webURL: "https://raw.githubusercontent.com/cranci1/waifu2D/main/waifu2D/Gallery/Gallery.xcassets/asuna.imageset/asuna.png"),
+                ImageInfo(name: "Aqua", author: "@konosubaanime", imageName: "aqua", webURL: "https://raw.githubusercontent.com/cranci1/waifu2D/main/waifu2D/Gallery/Gallery.xcassets/aqua.imageset/aqua.png"),
+                ImageInfo(name: "Sumi Sakurasawa", author: "@kanokari_anime", imageName: "sumi", webURL: "https://raw.githubusercontent.com/cranci1/waifu2D/main/waifu2D/Gallery/Gallery.xcassets/sumi.imageset/sumi.png"),
+                ImageInfo(name: "Shizuka Mikazuki", author: "@Zom100_anime_JP", imageName: "Shizuka", webURL: "https://raw.githubusercontent.com/cranci1/waifu2D/main/waifu2D/Gallery/Gallery.xcassets/Shizuka.imageset/shizuka.png")
                 
             ])
 

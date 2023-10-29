@@ -4,6 +4,7 @@ struct ImageInfo {
     var name: String
     var author: String
     var imageName: String
+    var webURL: String
 }
 
 struct GalleryItemView: View {
@@ -46,7 +47,7 @@ struct GalleryItemView: View {
                             Spacer()
 
                             Button(action: {
-                                downloadAndSaveImage(imageName: image.imageName)
+                                downloadAndSaveImage(image: image)
                             }) {
                                 Image(systemName: "arrow.down.circle")
                                     .foregroundColor(.white)
@@ -150,40 +151,33 @@ extension Color {
     static let secondaryText: Color = Color(UIColor.secondaryLabel)
 }
 
-func downloadAndSaveImage(imageName: String) {
-    guard let image = UIImage(named: imageName) else {
-        print("Error loading UIImage.")
-        return
+func downloadAndSaveImage(image: ImageInfo) {
+    if let webURL = URL(string: image.webURL) {
+        if UIApplication.shared.canOpenURL(webURL) {
+            UIApplication.shared.open(webURL, options: [:], completionHandler: nil)
+        } else {
+            print("Error: Unable to open the web URL.")
+        }
+    } else {
+        print("Error: Web URL not found for image: \(image.imageName)")
     }
-
-    guard image.pngData() != nil else {
-        print("Error getting PNG representation.")
-        return
-    }
-
-    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-    print("Image downloaded and saved to the Photos app successfully!")
 }
 
 struct ContentView: View {
     let galleryImages: [ImageInfo] = [
-        ImageInfo(name: "Luna Shirakawa", author: "@kimizero_anime", imageName: "luna"),
-        ImageInfo(name: "Mai Sakurajima", author: "@aobuta_anime", imageName: "mai"),
-        ImageInfo(name: "Mai Sakurajima bunny ears", author: "@aobuta_anime", imageName: "mai-bunny-half"),
-        ImageInfo(name: "Mai Sakurajima bunny", author: "@aobuta_anime", imageName: "mai-bunny"),
-        ImageInfo(name: "Asuna Yuuki", author: "@sao_anime", imageName: "asuna"),
-        ImageInfo(name: "Aqua", author: "@konosubaanime", imageName: "aqua"),
-        ImageInfo(name: "Sumi Sakurasawa", author: "@kanokari_anime", imageName: "sumi"),
-        ImageInfo(name: "Shizuka Mikazuki", author: "@Zom100_anime_JP", imageName: "Shizuka")
+        
+        ImageInfo(name: "Luna Shirakawa", author: "@kimizero_anime", imageName: "luna", webURL: "https://raw.githubusercontent.com/cranci1/waifu2D/main/waifu2D/Gallery/Gallery.xcassets/luna.imageset/luna.png"),
+        ImageInfo(name: "Mai Sakurajima", author: "@aobuta_anime", imageName: "mai", webURL: "https://raw.githubusercontent.com/cranci1/waifu2D/main/waifu2D/Gallery/Gallery.xcassets/mai.imageset/mai.png"),
+        ImageInfo(name: "Mai Sakurajima bunny ears", author: "@aobuta_anime", imageName: "mai-bunny-half", webURL: "https://raw.githubusercontent.com/cranci1/waifu2D/main/waifu2D/Gallery/Gallery.xcassets/mai-bunny-half.imageset/semi.png"),
+        ImageInfo(name: "Mai Sakurajima bunny", author: "@aobuta_anime", imageName: "mai-bunny", webURL: "https://raw.githubusercontent.com/cranci1/waifu2D/main/waifu2D/Gallery/Gallery.xcassets/mai-bunny.imageset/bunny.png"),
+        ImageInfo(name: "Asuna Yuuki", author: "@sao_anime", imageName: "asuna", webURL: "https://raw.githubusercontent.com/cranci1/waifu2D/main/waifu2D/Gallery/Gallery.xcassets/asuna.imageset/asuna.png"),
+        ImageInfo(name: "Aqua", author: "@konosubaanime", imageName: "aqua", webURL: "https://raw.githubusercontent.com/cranci1/waifu2D/main/waifu2D/Gallery/Gallery.xcassets/aqua.imageset/aqua.png"),
+        ImageInfo(name: "Sumi Sakurasawa", author: "@kanokari_anime", imageName: "sumi", webURL: "https://raw.githubusercontent.com/cranci1/waifu2D/main/waifu2D/Gallery/Gallery.xcassets/sumi.imageset/sumi.png"),
+        ImageInfo(name: "Shizuka Mikazuki", author: "@Zom100_anime_JP", imageName: "Shizuka", webURL: "https://raw.githubusercontent.com/cranci1/waifu2D/main/waifu2D/Gallery/Gallery.xcassets/Shizuka.imageset/shizuka.png")
+        
     ]
 
     var body: some View {
         GalleryView(images: galleryImages)
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
