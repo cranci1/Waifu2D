@@ -28,7 +28,6 @@ struct GalleryItemView: View {
                             }
                         }
                 } else {
-                    // Display a placeholder or an error message
                     Text("Image not found: \(image.imageName)")
                         .foregroundColor(.red)
                 }
