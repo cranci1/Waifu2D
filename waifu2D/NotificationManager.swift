@@ -1,4 +1,5 @@
 import UserNotifications
+import UIKit
 
 class NotificationManager {
     let notificationCenter = UNUserNotificationCenter.current()
@@ -36,7 +37,8 @@ class NotificationManager {
         let content = UNMutableNotificationContent()
         content.title = "Sweet Missings 💕"
         content.body = messages.randomElement() ?? "Default message"
-        content.sound = UNNotificationSound.default
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "tuturu.wav"))
+        content.badge = NSNumber(value: UIApplication.shared.applicationIconBadgeNumber + 1)
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3 * 60 * 60, repeats: true)
 
