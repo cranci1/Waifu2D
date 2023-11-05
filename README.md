@@ -1,4 +1,6 @@
 # myWaifu2D
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcranci1%2Fwaifu2D.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcranci1%2Fwaifu2D?ref=badge_shield)
+
 simple swift app that display an image + some texts under it.
 
 Require iOS 14+ ( Don't think i'll be able to go under ios 14 )
@@ -33,3 +35,7 @@ GESTURES:
 
 ---
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcranci1%2Fwaifu2D.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcranci1%2Fwaifu2D?ref=badge_large)
