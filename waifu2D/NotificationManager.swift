@@ -1,44 +1,9 @@
-//
-//  NotificationManager.swift
-//  waifu2D
-//
-//  Created by Francesco on 16/09/23.
-//
-
-import UIKit
 import UserNotifications
 
 class NotificationManager {
-
-    static let shared = NotificationManager()
-
-    private init() {}
-
-    private var notificationTimer: Timer?
-
-    func scheduleNotifications() {
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-            if granted {
-                // Schedule notifications immediately
-                self.scheduleRecurringNotifications()
-                
-                // Schedule recurring timer for future notifications
-                self.notificationTimer = Timer.scheduledTimer(withTimeInterval: 5400, repeats: true) { _ in
-                    self.scheduleRecurringNotifications()
-                }
-            } else {
-                print("Notification permission denied.")
-            }
-        }
-    }
-
-    private func scheduleRecurringNotifications() {
-        let content = UNMutableNotificationContent()
-
-        func getRandomText() -> String {
-            let notificationTexts = [
-                        "Senpai, my heart aches when you're not here. I miss you so much, it feels like the world loses its colors without you by my side. 💕🌸",
+    let notificationCenter = UNUserNotificationCenter.current()
+    let options: UNAuthorizationOptions = [.alert, .sound]
+    let messages = [   "Senpai, my heart aches when you're not here. I miss you so much, it feels like the world loses its colors without you by my side. 💕🌸",
                         "When I close my eyes, all I can see is your smile. I miss you every second you're not here.",
                         "Even the stars in the night sky can't outshine the brightness of your presence. I long for you.",
                         "My heart beats faster whenever you're near, but it aches when you're away. I wish you were here with me right now.",
@@ -57,31 +22,30 @@ class NotificationManager {
                         "If my thoughts were stars, they'd form constellations of you. I miss you to the farthest reaches of the universe. ✨🌌",
                         "My heart whispers your name in the quiet moments. I ache for the symphony of 'you and me' to resume. 🎶❤️",
                         "Like a sunset without its colors, my day lacks vibrancy without you. 🌅💖",
-                        "I'm a melody without its harmony when you're not here. Let's compose our song together again. 🎵❤️",
-                        
-            ]
-            return notificationTexts.randomElement() ?? "I miss you sempai"
-        }
+                        "I'm a melody without its harmony when you're not here. Let's compose our song together again. 🎵❤️",]
 
-        let notificationInterval: TimeInterval = 5400
-                var delay: TimeInterval = 5400
-
-        for _ in 1...10 {
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: false)
-            content.title = "Sweet Missings 💕"
-            content.body = getRandomText()
-            
-            // Set the sound file with the correct format and name using the `.named` initializer
-            content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "tuturu.wav"))
-
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-            UNUserNotificationCenter.current().add(request) { (error) in
-                if let error = error {
-                    print("Error scheduling notification: \(error.localizedDescription)")
-                }
+    func requestAuthorization() {
+        notificationCenter.requestAuthorization(options: options) { (didAllow, error) in
+            if !didAllow {
+                print("User has declined notifications")
             }
+        }
+    }
 
-            delay += notificationInterval
+    func scheduleNotifications() {
+        let content = UNMutableNotificationContent()
+        content.title = "Sweet Missings 💕"
+        content.body = messages.randomElement() ?? "Default message"
+        content.sound = UNNotificationSound.default
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3 * 60 * 60, repeats: true)
+
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+        notificationCenter.add(request) { (error) in
+            if let error = error {
+                print("Error \(error.localizedDescription)")
+            }
         }
     }
 }

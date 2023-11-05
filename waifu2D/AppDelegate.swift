@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  waifu2D
-//
-//  Created by Francesco on 16/09/23.
-//
-
 import UIKit
 import UserNotifications
 import Photos
@@ -13,18 +6,9 @@ import Photos
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let notificationManager = NotificationManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        // Request notification permission
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
-            if granted {
-                print("Notification permission granted")
-                NotificationManager.shared.scheduleNotifications()
-            } else {
-                print("Notification permission denied")
-            }
-        }
         
         // Request photo library access
         PHPhotoLibrary.requestAuthorization { status in
@@ -41,7 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 break
             }
         }
-        
+
+        // Request notification authorization
+        notificationManager.requestAuthorization()
+
         return true
     }
 
@@ -52,6 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        
+
     }
 }
