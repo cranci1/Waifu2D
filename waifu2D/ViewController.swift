@@ -113,7 +113,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             view.addSubview(chooseImageButton)
                         
             chooseImageButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-            chooseImageButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16).isActive = true
+            chooseImageButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
             
             let showGalleryButton = UIButton(type: .system)
             let showGalleryConfig = UIImage.SymbolConfiguration(pointSize: 20)
@@ -127,7 +127,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             view.addSubview(showGalleryButton)
 
             showGalleryButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
-            showGalleryButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16).isActive = true
+            showGalleryButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
             
             
                            }
@@ -185,40 +185,37 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             let context = LAContext()
             var error: NSError?
 
-            // Check whether it's possible to use biometric authentication
             if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-                // Biometric authentication is available, use it
                 showOverlay()
 
                 // Handle Face ID
                 context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "This is a security check reason.") { success, authenticationError in
                     DispatchQueue.main.async {
                         if success {
-                            // Update UI or perform any actions upon successful authentication
+                            
                             print("Biometric authentication successful")
                             self.isBiometricAuthenticated = true
                             self.hideOverlay()
                         } else {
-                            // Handle other authentication failures
+                            
                             print("Biometric authentication failed: \(authenticationError?.localizedDescription ?? "Unknown error")")
                             self.showAuthenticationError(withPasscodeFallback: true)
                         }
                     }
                 }
             } else if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
-                // Biometric authentication is not available, prompt for passcode
+                
                 showOverlay()
 
-                // Handle Touch ID
                 context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "This is a security check reason.") { success, authenticationError in
                     DispatchQueue.main.async {
                         if success {
-                            // Update UI or perform any actions upon successful authentication
+
                             print("Biometric authentication (Touch ID) successful")
                             self.isBiometricAuthenticated = true
                             self.hideOverlay()
                         } else {
-                            // Handle passcode authentication failure
+                           
                             print("Passcode authentication failed: \(authenticationError?.localizedDescription ?? "Unknown error")")
                             self.showAuthenticationError(withPasscodeFallback: true)
                         }
@@ -274,18 +271,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             let context = LAContext()
             var _: NSError?
 
-            // Display the passcode entry prompt
+            
             context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Please enter your passcode.") { success, authenticationError in
                 DispatchQueue.main.async {
                     if success {
-                        // Passcode authentication successful
+                        
                         print("Passcode authentication successful")
                         self.isBiometricAuthenticated = true
                         self.hideOverlay()
                     } else {
-                        // Passcode authentication failed
+                        
                         print("Passcode authentication failed: \(authenticationError?.localizedDescription ?? "Unknown error")")
-                        // Handle failure if needed
+
                     }
                 }
             }
