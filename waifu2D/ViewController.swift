@@ -137,6 +137,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                   imageView.image = selectedImage
               }
         
+        
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         
